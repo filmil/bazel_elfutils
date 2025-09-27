@@ -7,3 +7,6 @@ try-import %workspace%/user.bazelrc
 build \
   --registry=https://raw.githubusercontent.com/filmil/bazel-registry/main \
   --registry=https://bcr.bazel.build
+
+common \
+ --experimental_ui_max_stdouterr_bytes=4000000
