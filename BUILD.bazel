@@ -1,0 +1,78 @@
+load("@rules_cc//cc:defs.bzl", "cc_test")
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "configure_make")
+
+package(default_visibility = ["//visibility:public"])
+
+_BINARIES = [
+    "eu-addr2line",
+    "eu-ar",
+    "eu-addr2line",
+    "eu-ar",
+    "eu-elfclassify",
+    "eu-elfcmp",
+    "eu-elfcompress",
+    "eu-elflint",
+    "eu-findtextrel",
+    "eu-make-debug-archive",
+    "eu-nm",
+    "eu-objdump",
+    "eu-ranlib",
+    "eu-readelf",
+    "eu-size",
+    "eu-srcfiles",
+    "eu-stack",
+    "eu-strings",
+    "eu-strip",
+    "eu-unstrip",
+]
+
+configure_make(
+    name = "elfutils",
+    lib_source = "@src//:all_srcs",
+    configure_options = [
+        "--disable-rpath",
+    ],
+    args = [
+        "install",
+    ],
+    out_binaries = _BINARIES,
+    out_shared_libs = [
+        "libasm-0.193.so",
+        "libasm.so",
+        "libasm.so.1",
+        "libdw-0.193.so",
+        "libdw.so",
+        "libdw.so.1",
+        "libelf-0.193.so",
+        "libelf.so",
+        "libelf.so.1",
+    ],
+    out_static_libs = [
+        "libasm.a",
+        "libdw.a",
+        "libelf.a",
+    ],
+    deps = [
+        "@zlib//:zlib",
+    ]
+)
+
+
+[
+    # Generate a target for each binary, for example `//:eu-ar_bin`.
+    filegroup(
+        name = binary_name + "_bin",
+        output_group = binary_name,
+        srcs = [":elfutils"],
+    )
+    for binary_name in _BINARIES
+]
+
+
+cc_test(
+    name = "test",
+    srcs = [
+        "test.cc",
+    ],
+    deps = [":elfutils"],
+)
