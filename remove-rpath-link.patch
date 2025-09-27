@@ -1,0 +1,1191 @@
+diff '--color=auto' -u -r b/debuginfod/Makefile.am a/debuginfod/Makefile.am
+--- b/debuginfod/Makefile.am	2025-04-25 13:16:30.000000000 -0700
++++ a/debuginfod/Makefile.am	2025-09-27 13:10:39.337489532 -0700
+@@ -58,7 +58,7 @@
+ libebl = ../libebl/libebl.a
+ libeu = ../lib/libeu.a
+ 
+-AM_LDFLAGS = -Wl,-rpath-link,../libelf:../libdw:.
++AM_LDFLAGS = 
+ 
+ bin_PROGRAMS =
+ if DEBUGINFOD
+diff '--color=auto' -u -r b/debuginfod/Makefile.in a/debuginfod/Makefile.in
+--- b/debuginfod/Makefile.in	2025-04-25 13:16:32.000000000 -0700
++++ a/debuginfod/Makefile.in	2025-09-27 13:10:46.478489750 -0700
+@@ -123,7 +123,7 @@
+ AM_V_AR = $(am__v_AR_@AM_V@)
+ am__v_AR_ = $(am__v_AR_@AM_DEFAULT_V@)
+ am__v_AR_0 = @echo "  AR      " $@;
+-am__v_AR_1 = 
++am__v_AR_1 =
+ libdebuginfod_a_AR = $(AR) $(ARFLAGS)
+ libdebuginfod_a_RANLIB = $(RANLIB)
+ libdebuginfod_a_LIBADD =
+@@ -167,11 +167,11 @@
+ AM_V_GEN = $(am__v_GEN_@AM_V@)
+ am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
+ am__v_GEN_0 = @echo "  GEN     " $@;
+-am__v_GEN_1 = 
++am__v_GEN_1 =
+ AM_V_at = $(am__v_at_@AM_V@)
+ am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
+ am__v_at_0 = @
+-am__v_at_1 = 
++am__v_at_1 =
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+ am__maybe_remake_depfiles = depfiles
+@@ -183,26 +183,26 @@
+ AM_V_CC = $(am__v_CC_@AM_V@)
+ am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
+ am__v_CC_0 = @echo "  CC      " $@;
+-am__v_CC_1 = 
++am__v_CC_1 =
+ CCLD = $(CC)
+ LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
+ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+ am__v_CCLD_0 = @echo "  CCLD    " $@;
+-am__v_CCLD_1 = 
++am__v_CCLD_1 =
+ CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+ 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+ AM_V_CXX = $(am__v_CXX_@AM_V@)
+ am__v_CXX_ = $(am__v_CXX_@AM_DEFAULT_V@)
+ am__v_CXX_0 = @echo "  CXX     " $@;
+-am__v_CXX_1 = 
++am__v_CXX_1 =
+ CXXLD = $(CXX)
+ CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
+ 	-o $@
+ AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
+ am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
+ am__v_CXXLD_0 = @echo "  CXXLD   " $@;
+-am__v_CXXLD_1 = 
++am__v_CXXLD_1 =
+ SOURCES = $(libdebuginfod_a_SOURCES) $(libdebuginfod_pic_a_SOURCES) \
+ 	$(debuginfod_SOURCES) $(debuginfod_find_SOURCES)
+ DIST_SOURCES = $(libdebuginfod_a_SOURCES) \
+@@ -453,29 +453,29 @@
+ # Drop the 'u' flag that automake adds by default. It is incompatible
+ # with deterministic archives.
+ ARFLAGS = cr
+-@ADD_STACK_USAGE_WARNING_FALSE@STACK_USAGE_WARNING = 
++@ADD_STACK_USAGE_WARNING_FALSE@STACK_USAGE_WARNING =
+ 
+ # Warn about stack usage of more than 256K = 262144 bytes.
+ @ADD_STACK_USAGE_WARNING_TRUE@STACK_USAGE_WARNING = -Wstack-usage=262144
+-@ADD_STACK_USAGE_WARNING_FALSE@STACK_USAGE_NO_ERROR = 
++@ADD_STACK_USAGE_WARNING_FALSE@STACK_USAGE_NO_ERROR =
+ @ADD_STACK_USAGE_WARNING_TRUE@STACK_USAGE_NO_ERROR = -Wno-error=stack-usage=
+-@SANE_LOGICAL_OP_WARNING_FALSE@LOGICAL_OP_WARNING = 
++@SANE_LOGICAL_OP_WARNING_FALSE@LOGICAL_OP_WARNING =
+ @SANE_LOGICAL_OP_WARNING_TRUE@LOGICAL_OP_WARNING = -Wlogical-op
+-@HAVE_DUPLICATED_COND_WARNING_FALSE@DUPLICATED_COND_WARNING = 
++@HAVE_DUPLICATED_COND_WARNING_FALSE@DUPLICATED_COND_WARNING =
+ @HAVE_DUPLICATED_COND_WARNING_TRUE@DUPLICATED_COND_WARNING = -Wduplicated-cond
+-@HAVE_NULL_DEREFERENCE_WARNING_FALSE@NULL_DEREFERENCE_WARNING = 
++@HAVE_NULL_DEREFERENCE_WARNING_FALSE@NULL_DEREFERENCE_WARNING =
+ @HAVE_NULL_DEREFERENCE_WARNING_TRUE@NULL_DEREFERENCE_WARNING = -Wnull-dereference
+ @HAVE_IMPLICIT_FALLTHROUGH_5_WARNING_FALSE@@HAVE_IMPLICIT_FALLTHROUGH_WARNING_TRUE@IMPLICIT_FALLTHROUGH_WARNING = -Wimplicit-fallthrough
+ 
+ # Use strict fallthrough. Only __attribute__((fallthrough)) will prevent the
+ # warning
+ @HAVE_IMPLICIT_FALLTHROUGH_5_WARNING_TRUE@@HAVE_IMPLICIT_FALLTHROUGH_WARNING_TRUE@IMPLICIT_FALLTHROUGH_WARNING = -Wimplicit-fallthrough=5
+-@HAVE_IMPLICIT_FALLTHROUGH_WARNING_FALSE@IMPLICIT_FALLTHROUGH_WARNING = 
+-@HAVE_TRAMPOLINES_WARNING_FALSE@TRAMPOLINES_WARNING = 
++@HAVE_IMPLICIT_FALLTHROUGH_WARNING_FALSE@IMPLICIT_FALLTHROUGH_WARNING =
++@HAVE_TRAMPOLINES_WARNING_FALSE@TRAMPOLINES_WARNING =
+ @HAVE_TRAMPOLINES_WARNING_TRUE@TRAMPOLINES_WARNING = -Wtrampolines
+-@HAVE_NO_PACKED_NOT_ALIGNED_WARNING_FALSE@NO_PACKED_NOT_ALIGNED_WARNING = 
++@HAVE_NO_PACKED_NOT_ALIGNED_WARNING_FALSE@NO_PACKED_NOT_ALIGNED_WARNING =
+ @HAVE_NO_PACKED_NOT_ALIGNED_WARNING_TRUE@NO_PACKED_NOT_ALIGNED_WARNING = -Wno-packed-not-aligned
+-@HAVE_USE_AFTER_FREE3_WARNING_FALSE@USE_AFTER_FREE3_WARNING = 
++@HAVE_USE_AFTER_FREE3_WARNING_FALSE@USE_AFTER_FREE3_WARNING =
+ @HAVE_USE_AFTER_FREE3_WARNING_TRUE@USE_AFTER_FREE3_WARNING = -Wuse-after-free=3
+ AM_CFLAGS = -Wall -Wshadow -Wformat=2 \
+ 	    -Wold-style-definition -Wstrict-prototypes $(TRAMPOLINES_WARNING) \
+@@ -509,7 +509,7 @@
+ 
+ # Disable eu- prefixing for artifacts (binaries & man pages) in this
+ # directory, since they do not conflict with binutils tools.
+-program_prefix = 
++program_prefix =
+ @BUILD_STATIC_FALSE@libasm = ../libasm/libasm.so
+ @BUILD_STATIC_TRUE@libasm = ../libasm/libasm.a
+ @BUILD_STATIC_FALSE@libdw = ../libdw/libdw.so
+@@ -521,7 +521,7 @@
+ @BUILD_STATIC_TRUE@@DUMMY_LIBDEBUGINFOD_TRUE@libdebuginfod = ./libdebuginfod.a
+ libebl = ../libebl/libebl.a
+ libeu = ../lib/libeu.a
+-AM_LDFLAGS = -Wl,-rpath-link,../libelf:../libdw:.
++AM_LDFLAGS =
+ debuginfod_SOURCES = debuginfod.cxx
+ debuginfod_LDADD = $(libdw) $(libelf) $(libeu) $(libdebuginfod) $(argp_LDADD) $(fts_LIBS) $(libmicrohttpd_LIBS) $(sqlite3_LIBS) $(libarchive_LIBS) $(rpm_LIBS) $(jsonc_LIBS) $(libcurl_LIBS) $(lzma_LIBS) -lpthread -ldl
+ debuginfod_find_SOURCES = debuginfod-find.c
+@@ -534,7 +534,7 @@
+ @LIBDEBUGINFOD_TRUE@pkginclude_HEADERS = debuginfod.h
+ @LIBDEBUGINFOD_TRUE@libdebuginfod_so_LIBS = libdebuginfod_pic.a
+ @DUMMY_LIBDEBUGINFOD_FALSE@@LIBDEBUGINFOD_TRUE@libdebuginfod_so_LDLIBS = -lpthread $(libcurl_LIBS) $(fts_LIBS) $(libelf) $(crypto_LIBS) $(jsonc_LIBS)
+-@DUMMY_LIBDEBUGINFOD_TRUE@@LIBDEBUGINFOD_TRUE@libdebuginfod_so_LDLIBS = 
++@DUMMY_LIBDEBUGINFOD_TRUE@@LIBDEBUGINFOD_TRUE@libdebuginfod_so_LDLIBS =
+ EXTRA_DIST = libdebuginfod.map
+ EXTRA_libdebuginfod_a_DEPENDENCIES = libdebuginfod.manifest
+ MOSTLYCLEANFILES = $(am_libdebuginfod_a_OBJECTS) $(am_libdebuginfod_pic_a_OBJECTS) $(LIBDEBUGINFOD_SONAME)
+@@ -621,21 +621,21 @@
+ clean-noinstLIBRARIES:
+ 	-$(am__rm_f) $(noinst_LIBRARIES)
+ 
+-libdebuginfod.a: $(libdebuginfod_a_OBJECTS) $(libdebuginfod_a_DEPENDENCIES) $(EXTRA_libdebuginfod_a_DEPENDENCIES) 
++libdebuginfod.a: $(libdebuginfod_a_OBJECTS) $(libdebuginfod_a_DEPENDENCIES) $(EXTRA_libdebuginfod_a_DEPENDENCIES)
+ 	$(AM_V_at)-rm -f libdebuginfod.a
+ 	$(AM_V_AR)$(libdebuginfod_a_AR) libdebuginfod.a $(libdebuginfod_a_OBJECTS) $(libdebuginfod_a_LIBADD)
+ 	$(AM_V_at)$(libdebuginfod_a_RANLIB) libdebuginfod.a
+ 
+-libdebuginfod_pic.a: $(libdebuginfod_pic_a_OBJECTS) $(libdebuginfod_pic_a_DEPENDENCIES) $(EXTRA_libdebuginfod_pic_a_DEPENDENCIES) 
++libdebuginfod_pic.a: $(libdebuginfod_pic_a_OBJECTS) $(libdebuginfod_pic_a_DEPENDENCIES) $(EXTRA_libdebuginfod_pic_a_DEPENDENCIES)
+ 	$(AM_V_at)-rm -f libdebuginfod_pic.a
+ 	$(AM_V_AR)$(libdebuginfod_pic_a_AR) libdebuginfod_pic.a $(libdebuginfod_pic_a_OBJECTS) $(libdebuginfod_pic_a_LIBADD)
+ 	$(AM_V_at)$(libdebuginfod_pic_a_RANLIB) libdebuginfod_pic.a
+ 
+-debuginfod$(EXEEXT): $(debuginfod_OBJECTS) $(debuginfod_DEPENDENCIES) $(EXTRA_debuginfod_DEPENDENCIES) 
++debuginfod$(EXEEXT): $(debuginfod_OBJECTS) $(debuginfod_DEPENDENCIES) $(EXTRA_debuginfod_DEPENDENCIES)
+ 	@rm -f debuginfod$(EXEEXT)
+ 	$(AM_V_CXXLD)$(CXXLINK) $(debuginfod_OBJECTS) $(debuginfod_LDADD) $(LIBS)
+ 
+-debuginfod-find$(EXEEXT): $(debuginfod_find_OBJECTS) $(debuginfod_find_DEPENDENCIES) $(EXTRA_debuginfod_find_DEPENDENCIES) 
++debuginfod-find$(EXEEXT): $(debuginfod_find_OBJECTS) $(debuginfod_find_DEPENDENCIES) $(EXTRA_debuginfod_find_DEPENDENCIES)
+ 	@rm -f debuginfod-find$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(debuginfod_find_OBJECTS) $(debuginfod_find_LDADD) $(LIBS)
+ 
+diff '--color=auto' -u -r b/NEWS a/NEWS
+--- b/NEWS	2025-04-25 13:16:30.000000000 -0700
++++ a/NEWS	2025-09-27 12:01:55.077363660 -0700
+@@ -1791,9 +1791,6 @@
+ 
+ make handling of e_shnum overflow in libelf standard conforming
+ 
+-ld now actually can handle DSOs in linker scripts.  Handling of DT_RUNPATH,
+-DT_RPATH, -rpath, -rpath-link still remains to be implemented.
+-
+ fix handling of -L parameters.  Make actual use of the default_paths element.
+ 
+ make re-definition of symbols in and from DSO compatible with existing linker
+diff '--color=auto' -u -r b/src/Makefile.am a/src/Makefile.am
+--- b/src/Makefile.am	2025-04-25 13:16:30.000000000 -0700
++++ a/src/Makefile.am	2025-09-27 12:02:10.122364121 -0700
+@@ -26,7 +26,7 @@
+ 	    -I$(srcdir)/../libdwfl -I$(srcdir)/../libdwfl_stacktrace \
+ 	    -I$(srcdir)/../libasm -I../debuginfod
+ 
+-AM_LDFLAGS = -Wl,-rpath-link,../libelf:../libdw $(STACK_USAGE_NO_ERROR)
++AM_LDFLAGS = $(STACK_USAGE_NO_ERROR)
+ 
+ bin_PROGRAMS = readelf nm size strip elflint findtextrel addr2line \
+ 	       elfcmp objdump ranlib strings ar unstrip stack elfcompress \
+diff '--color=auto' -u -r b/src/Makefile.in a/src/Makefile.in
+--- b/src/Makefile.in	2025-04-25 13:16:32.000000000 -0700
++++ a/src/Makefile.in	2025-09-27 12:02:20.382364438 -0700
+@@ -124,7 +124,7 @@
+ AM_V_AR = $(am__v_AR_@AM_V@)
+ am__v_AR_ = $(am__v_AR_@AM_DEFAULT_V@)
+ am__v_AR_0 = @echo "  AR      " $@;
+-am__v_AR_1 = 
++am__v_AR_1 =
+ libar_a_AR = $(AR) $(ARFLAGS)
+ libar_a_RANLIB = $(RANLIB)
+ libar_a_LIBADD =
+@@ -254,11 +254,11 @@
+ AM_V_GEN = $(am__v_GEN_@AM_V@)
+ am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
+ am__v_GEN_0 = @echo "  GEN     " $@;
+-am__v_GEN_1 = 
++am__v_GEN_1 =
+ AM_V_at = $(am__v_at_@AM_V@)
+ am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
+ am__v_at_0 = @
+-am__v_at_1 = 
++am__v_at_1 =
+ depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+ am__maybe_remake_depfiles = depfiles
+ am__depfiles_remade = ./$(DEPDIR)/addr2line.Po ./$(DEPDIR)/ar.Po \
+@@ -277,26 +277,26 @@
+ AM_V_CC = $(am__v_CC_@AM_V@)
+ am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
+ am__v_CC_0 = @echo "  CC      " $@;
+-am__v_CC_1 = 
++am__v_CC_1 =
+ CCLD = $(CC)
+ LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
+ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+ am__v_CCLD_0 = @echo "  CCLD    " $@;
+-am__v_CCLD_1 = 
++am__v_CCLD_1 =
+ CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+ 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+ AM_V_CXX = $(am__v_CXX_@AM_V@)
+ am__v_CXX_ = $(am__v_CXX_@AM_DEFAULT_V@)
+ am__v_CXX_0 = @echo "  CXX     " $@;
+-am__v_CXX_1 = 
++am__v_CXX_1 =
+ CXXLD = $(CXX)
+ CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
+ 	-o $@
+ AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
+ am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
+ am__v_CXXLD_0 = @echo "  CXXLD   " $@;
+-am__v_CXXLD_1 = 
++am__v_CXXLD_1 =
+ SOURCES = $(libar_a_SOURCES) addr2line.c ar.c elfclassify.c elfcmp.c \
+ 	elfcompress.c elflint.c findtextrel.c nm.c objdump.c ranlib.c \
+ 	readelf.c size.c $(srcfiles_SOURCES) stack.c stacktrace.c \
+@@ -523,29 +523,29 @@
+ # Drop the 'u' flag that automake adds by default. It is incompatible
+ # with deterministic archives.
+ ARFLAGS = cr
+-@ADD_STACK_USAGE_WARNING_FALSE@STACK_USAGE_WARNING = 
++@ADD_STACK_USAGE_WARNING_FALSE@STACK_USAGE_WARNING =
+ 
+ # Warn about stack usage of more than 256K = 262144 bytes.
+ @ADD_STACK_USAGE_WARNING_TRUE@STACK_USAGE_WARNING = -Wstack-usage=262144
+-@ADD_STACK_USAGE_WARNING_FALSE@STACK_USAGE_NO_ERROR = 
++@ADD_STACK_USAGE_WARNING_FALSE@STACK_USAGE_NO_ERROR =
+ @ADD_STACK_USAGE_WARNING_TRUE@STACK_USAGE_NO_ERROR = -Wno-error=stack-usage=
+-@SANE_LOGICAL_OP_WARNING_FALSE@LOGICAL_OP_WARNING = 
++@SANE_LOGICAL_OP_WARNING_FALSE@LOGICAL_OP_WARNING =
+ @SANE_LOGICAL_OP_WARNING_TRUE@LOGICAL_OP_WARNING = -Wlogical-op
+-@HAVE_DUPLICATED_COND_WARNING_FALSE@DUPLICATED_COND_WARNING = 
++@HAVE_DUPLICATED_COND_WARNING_FALSE@DUPLICATED_COND_WARNING =
+ @HAVE_DUPLICATED_COND_WARNING_TRUE@DUPLICATED_COND_WARNING = -Wduplicated-cond
+-@HAVE_NULL_DEREFERENCE_WARNING_FALSE@NULL_DEREFERENCE_WARNING = 
++@HAVE_NULL_DEREFERENCE_WARNING_FALSE@NULL_DEREFERENCE_WARNING =
+ @HAVE_NULL_DEREFERENCE_WARNING_TRUE@NULL_DEREFERENCE_WARNING = -Wnull-dereference
+ @HAVE_IMPLICIT_FALLTHROUGH_5_WARNING_FALSE@@HAVE_IMPLICIT_FALLTHROUGH_WARNING_TRUE@IMPLICIT_FALLTHROUGH_WARNING = -Wimplicit-fallthrough
+ 
+ # Use strict fallthrough. Only __attribute__((fallthrough)) will prevent the
+ # warning
+ @HAVE_IMPLICIT_FALLTHROUGH_5_WARNING_TRUE@@HAVE_IMPLICIT_FALLTHROUGH_WARNING_TRUE@IMPLICIT_FALLTHROUGH_WARNING = -Wimplicit-fallthrough=5
+-@HAVE_IMPLICIT_FALLTHROUGH_WARNING_FALSE@IMPLICIT_FALLTHROUGH_WARNING = 
+-@HAVE_TRAMPOLINES_WARNING_FALSE@TRAMPOLINES_WARNING = 
++@HAVE_IMPLICIT_FALLTHROUGH_WARNING_FALSE@IMPLICIT_FALLTHROUGH_WARNING =
++@HAVE_TRAMPOLINES_WARNING_FALSE@TRAMPOLINES_WARNING =
+ @HAVE_TRAMPOLINES_WARNING_TRUE@TRAMPOLINES_WARNING = -Wtrampolines
+-@HAVE_NO_PACKED_NOT_ALIGNED_WARNING_FALSE@NO_PACKED_NOT_ALIGNED_WARNING = 
++@HAVE_NO_PACKED_NOT_ALIGNED_WARNING_FALSE@NO_PACKED_NOT_ALIGNED_WARNING =
+ @HAVE_NO_PACKED_NOT_ALIGNED_WARNING_TRUE@NO_PACKED_NOT_ALIGNED_WARNING = -Wno-packed-not-aligned
+-@HAVE_USE_AFTER_FREE3_WARNING_FALSE@USE_AFTER_FREE3_WARNING = 
++@HAVE_USE_AFTER_FREE3_WARNING_FALSE@USE_AFTER_FREE3_WARNING =
+ @HAVE_USE_AFTER_FREE3_WARNING_TRUE@USE_AFTER_FREE3_WARNING = -Wuse-after-free=3
+ AM_CFLAGS = -Wall -Wshadow -Wformat=2 \
+ 	    -Wold-style-definition -Wstrict-prototypes $(TRAMPOLINES_WARNING) \
+@@ -576,8 +576,8 @@
+ @FATAL_TEXTREL_FALSE@textrel_found = $(textrel_msg)
+ @FATAL_TEXTREL_TRUE@textrel_found = $(textrel_msg); exit 1
+ textrel_check = if $(READELF) -d $@ | grep -F -q TEXTREL; then $(textrel_found); fi
+-DEFAULT_INCLUDES = 
+-AM_LDFLAGS = -Wl,-rpath-link,../libelf:../libdw $(STACK_USAGE_NO_ERROR)
++DEFAULT_INCLUDES =
++AM_LDFLAGS =  $(STACK_USAGE_NO_ERROR)
+ noinst_LIBRARIES = libar.a
+ libar_a_SOURCES = arlib.c arlib2.c arlib-argp.c
+ bin_SCRIPTS = make-debug-archive
+@@ -591,9 +591,9 @@
+ @BUILD_STATIC_TRUE@libdw = ../libdw/libdw.a -lz $(zip_LIBS) $(libelf) -ldl -lpthread
+ @BUILD_STATIC_FALSE@libelf = ../libelf/libelf.so
+ @BUILD_STATIC_TRUE@libelf = ../libelf/libelf.a -lz $(zstd_LIBS)
+-@BUILD_STATIC_FALSE@@LIBDEBUGINFOD_FALSE@libdebuginfod = 
++@BUILD_STATIC_FALSE@@LIBDEBUGINFOD_FALSE@libdebuginfod =
+ @BUILD_STATIC_FALSE@@LIBDEBUGINFOD_TRUE@libdebuginfod = ../debuginfod/libdebuginfod.so
+-@BUILD_STATIC_TRUE@@LIBDEBUGINFOD_FALSE@libdebuginfod = 
++@BUILD_STATIC_TRUE@@LIBDEBUGINFOD_FALSE@libdebuginfod =
+ @BUILD_STATIC_TRUE@@LIBDEBUGINFOD_TRUE@libdebuginfod = ../debuginfod/libdebuginfod.a -lpthread $(libcurl_LIBS) $(crypto_LIBS) $(jsonc_LIBS)
+ libebl = ../libebl/libebl.a ../backends/libebl_backends.a ../libcpu/libcpu.a
+ libeu = ../lib/libeu.a
+@@ -711,80 +711,80 @@
+ clean-noinstLIBRARIES:
+ 	-$(am__rm_f) $(noinst_LIBRARIES)
+ 
+-libar.a: $(libar_a_OBJECTS) $(libar_a_DEPENDENCIES) $(EXTRA_libar_a_DEPENDENCIES) 
++libar.a: $(libar_a_OBJECTS) $(libar_a_DEPENDENCIES) $(EXTRA_libar_a_DEPENDENCIES)
+ 	$(AM_V_at)-rm -f libar.a
+ 	$(AM_V_AR)$(libar_a_AR) libar.a $(libar_a_OBJECTS) $(libar_a_LIBADD)
+ 	$(AM_V_at)$(libar_a_RANLIB) libar.a
+ 
+-addr2line$(EXEEXT): $(addr2line_OBJECTS) $(addr2line_DEPENDENCIES) $(EXTRA_addr2line_DEPENDENCIES) 
++addr2line$(EXEEXT): $(addr2line_OBJECTS) $(addr2line_DEPENDENCIES) $(EXTRA_addr2line_DEPENDENCIES)
+ 	@rm -f addr2line$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(addr2line_OBJECTS) $(addr2line_LDADD) $(LIBS)
+ 
+-ar$(EXEEXT): $(ar_OBJECTS) $(ar_DEPENDENCIES) $(EXTRA_ar_DEPENDENCIES) 
++ar$(EXEEXT): $(ar_OBJECTS) $(ar_DEPENDENCIES) $(EXTRA_ar_DEPENDENCIES)
+ 	@rm -f ar$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(ar_OBJECTS) $(ar_LDADD) $(LIBS)
+ 
+-elfclassify$(EXEEXT): $(elfclassify_OBJECTS) $(elfclassify_DEPENDENCIES) $(EXTRA_elfclassify_DEPENDENCIES) 
++elfclassify$(EXEEXT): $(elfclassify_OBJECTS) $(elfclassify_DEPENDENCIES) $(EXTRA_elfclassify_DEPENDENCIES)
+ 	@rm -f elfclassify$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(elfclassify_OBJECTS) $(elfclassify_LDADD) $(LIBS)
+ 
+-elfcmp$(EXEEXT): $(elfcmp_OBJECTS) $(elfcmp_DEPENDENCIES) $(EXTRA_elfcmp_DEPENDENCIES) 
++elfcmp$(EXEEXT): $(elfcmp_OBJECTS) $(elfcmp_DEPENDENCIES) $(EXTRA_elfcmp_DEPENDENCIES)
+ 	@rm -f elfcmp$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(elfcmp_OBJECTS) $(elfcmp_LDADD) $(LIBS)
+ 
+-elfcompress$(EXEEXT): $(elfcompress_OBJECTS) $(elfcompress_DEPENDENCIES) $(EXTRA_elfcompress_DEPENDENCIES) 
++elfcompress$(EXEEXT): $(elfcompress_OBJECTS) $(elfcompress_DEPENDENCIES) $(EXTRA_elfcompress_DEPENDENCIES)
+ 	@rm -f elfcompress$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(elfcompress_OBJECTS) $(elfcompress_LDADD) $(LIBS)
+ 
+-elflint$(EXEEXT): $(elflint_OBJECTS) $(elflint_DEPENDENCIES) $(EXTRA_elflint_DEPENDENCIES) 
++elflint$(EXEEXT): $(elflint_OBJECTS) $(elflint_DEPENDENCIES) $(EXTRA_elflint_DEPENDENCIES)
+ 	@rm -f elflint$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(elflint_OBJECTS) $(elflint_LDADD) $(LIBS)
+ 
+-findtextrel$(EXEEXT): $(findtextrel_OBJECTS) $(findtextrel_DEPENDENCIES) $(EXTRA_findtextrel_DEPENDENCIES) 
++findtextrel$(EXEEXT): $(findtextrel_OBJECTS) $(findtextrel_DEPENDENCIES) $(EXTRA_findtextrel_DEPENDENCIES)
+ 	@rm -f findtextrel$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(findtextrel_OBJECTS) $(findtextrel_LDADD) $(LIBS)
+ 
+-nm$(EXEEXT): $(nm_OBJECTS) $(nm_DEPENDENCIES) $(EXTRA_nm_DEPENDENCIES) 
++nm$(EXEEXT): $(nm_OBJECTS) $(nm_DEPENDENCIES) $(EXTRA_nm_DEPENDENCIES)
+ 	@rm -f nm$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(nm_OBJECTS) $(nm_LDADD) $(LIBS)
+ 
+-objdump$(EXEEXT): $(objdump_OBJECTS) $(objdump_DEPENDENCIES) $(EXTRA_objdump_DEPENDENCIES) 
++objdump$(EXEEXT): $(objdump_OBJECTS) $(objdump_DEPENDENCIES) $(EXTRA_objdump_DEPENDENCIES)
+ 	@rm -f objdump$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(objdump_OBJECTS) $(objdump_LDADD) $(LIBS)
+ 
+-ranlib$(EXEEXT): $(ranlib_OBJECTS) $(ranlib_DEPENDENCIES) $(EXTRA_ranlib_DEPENDENCIES) 
++ranlib$(EXEEXT): $(ranlib_OBJECTS) $(ranlib_DEPENDENCIES) $(EXTRA_ranlib_DEPENDENCIES)
+ 	@rm -f ranlib$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(ranlib_OBJECTS) $(ranlib_LDADD) $(LIBS)
+ 
+-readelf$(EXEEXT): $(readelf_OBJECTS) $(readelf_DEPENDENCIES) $(EXTRA_readelf_DEPENDENCIES) 
++readelf$(EXEEXT): $(readelf_OBJECTS) $(readelf_DEPENDENCIES) $(EXTRA_readelf_DEPENDENCIES)
+ 	@rm -f readelf$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(readelf_OBJECTS) $(readelf_LDADD) $(LIBS)
+ 
+-size$(EXEEXT): $(size_OBJECTS) $(size_DEPENDENCIES) $(EXTRA_size_DEPENDENCIES) 
++size$(EXEEXT): $(size_OBJECTS) $(size_DEPENDENCIES) $(EXTRA_size_DEPENDENCIES)
+ 	@rm -f size$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(size_OBJECTS) $(size_LDADD) $(LIBS)
+ 
+-srcfiles$(EXEEXT): $(srcfiles_OBJECTS) $(srcfiles_DEPENDENCIES) $(EXTRA_srcfiles_DEPENDENCIES) 
++srcfiles$(EXEEXT): $(srcfiles_OBJECTS) $(srcfiles_DEPENDENCIES) $(EXTRA_srcfiles_DEPENDENCIES)
+ 	@rm -f srcfiles$(EXEEXT)
+ 	$(AM_V_CXXLD)$(CXXLINK) $(srcfiles_OBJECTS) $(srcfiles_LDADD) $(LIBS)
+ 
+-stack$(EXEEXT): $(stack_OBJECTS) $(stack_DEPENDENCIES) $(EXTRA_stack_DEPENDENCIES) 
++stack$(EXEEXT): $(stack_OBJECTS) $(stack_DEPENDENCIES) $(EXTRA_stack_DEPENDENCIES)
+ 	@rm -f stack$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(stack_OBJECTS) $(stack_LDADD) $(LIBS)
+ 
+-stacktrace$(EXEEXT): $(stacktrace_OBJECTS) $(stacktrace_DEPENDENCIES) $(EXTRA_stacktrace_DEPENDENCIES) 
++stacktrace$(EXEEXT): $(stacktrace_OBJECTS) $(stacktrace_DEPENDENCIES) $(EXTRA_stacktrace_DEPENDENCIES)
+ 	@rm -f stacktrace$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(stacktrace_OBJECTS) $(stacktrace_LDADD) $(LIBS)
+ 
+-strings$(EXEEXT): $(strings_OBJECTS) $(strings_DEPENDENCIES) $(EXTRA_strings_DEPENDENCIES) 
++strings$(EXEEXT): $(strings_OBJECTS) $(strings_DEPENDENCIES) $(EXTRA_strings_DEPENDENCIES)
+ 	@rm -f strings$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(strings_OBJECTS) $(strings_LDADD) $(LIBS)
+ 
+-strip$(EXEEXT): $(strip_OBJECTS) $(strip_DEPENDENCIES) $(EXTRA_strip_DEPENDENCIES) 
++strip$(EXEEXT): $(strip_OBJECTS) $(strip_DEPENDENCIES) $(EXTRA_strip_DEPENDENCIES)
+ 	@rm -f strip$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(strip_OBJECTS) $(strip_LDADD) $(LIBS)
+ 
+-unstrip$(EXEEXT): $(unstrip_OBJECTS) $(unstrip_DEPENDENCIES) $(EXTRA_unstrip_DEPENDENCIES) 
++unstrip$(EXEEXT): $(unstrip_OBJECTS) $(unstrip_DEPENDENCIES) $(EXTRA_unstrip_DEPENDENCIES)
+ 	@rm -f unstrip$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(unstrip_OBJECTS) $(unstrip_LDADD) $(LIBS)
+ install-binSCRIPTS: $(bin_SCRIPTS)
+diff '--color=auto' -u -r b/tests/ChangeLog a/tests/ChangeLog
+--- b/tests/ChangeLog	2025-04-25 13:16:30.000000000 -0700
++++ a/tests/ChangeLog	2025-09-27 13:09:52.573488074 -0700
+@@ -4319,7 +4319,7 @@
+ 
+ 2006-03-09  Roland McGrath  <roland@redhat.com>
+ 
+-	* Makefile.am (AM_LDFLAGS): Define to pass -rpath-link.
++	* Makefile.am (AM_LDFLAGS): Define to pass
+ 
+ 2006-03-01  Roland McGrath  <roland@redhat.com>
+ 
+diff '--color=auto' -u -r b/tests/Makefile.am a/tests/Makefile.am
+--- b/tests/Makefile.am	2025-04-25 13:16:30.000000000 -0700
++++ a/tests/Makefile.am	2025-09-27 13:10:30.302489256 -0700
+@@ -23,7 +23,7 @@
+ 	    -I$(top_srcdir)/libdwfl -I$(top_srcdir)/libdwelf \
+ 	    -I$(top_srcdir)/libebl -I$(top_srcdir)/libelf \
+ 	    -I$(top_srcdir)/lib -I..
+-AM_LDFLAGS = -Wl,-rpath-link,../libasm:../libdw:../libelf
++AM_LDFLAGS = 
+ 
+ if TESTS_RPATH
+ AM_LDFLAGS += -Wl,-rpath,$(BUILD_RPATH)
+diff '--color=auto' -u -r b/tests/Makefile.in a/tests/Makefile.in
+--- b/tests/Makefile.in	2025-04-25 13:16:32.000000000 -0700
++++ a/tests/Makefile.in	2025-09-27 13:10:12.828488707 -0700
+@@ -803,11 +803,11 @@
+ AM_V_GEN = $(am__v_GEN_@AM_V@)
+ am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
+ am__v_GEN_0 = @echo "  GEN     " $@;
+-am__v_GEN_1 = 
++am__v_GEN_1 =
+ AM_V_at = $(am__v_at_@AM_V@)
+ am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
+ am__v_at_0 = @
+-am__v_at_1 = 
++am__v_at_1 =
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+ am__maybe_remake_depfiles = depfiles
+@@ -897,32 +897,32 @@
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+ am__v_lt_0 = --silent
+-am__v_lt_1 = 
++am__v_lt_1 =
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ AM_V_CC = $(am__v_CC_@AM_V@)
+ am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
+ am__v_CC_0 = @echo "  CC      " $@;
+-am__v_CC_1 = 
++am__v_CC_1 =
+ CCLD = $(CC)
+ LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
+ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+ am__v_CCLD_0 = @echo "  CCLD    " $@;
+-am__v_CCLD_1 = 
++am__v_CCLD_1 =
+ CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+ 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+ AM_V_CXX = $(am__v_CXX_@AM_V@)
+ am__v_CXX_ = $(am__v_CXX_@AM_DEFAULT_V@)
+ am__v_CXX_0 = @echo "  CXX     " $@;
+-am__v_CXX_1 = 
++am__v_CXX_1 =
+ CXXLD = $(CXX)
+ CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
+ 	-o $@
+ AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
+ am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
+ am__v_CXXLD_0 = @echo "  CXXLD   " $@;
+-am__v_CXXLD_1 = 
++am__v_CXXLD_1 =
+ SOURCES = addrcfi.c addrscopes.c addsections.c aggregate_size.c \
+ 	all-dwarf-ranges.c alldts.c allfcts.c allregs.c arextract.c \
+ 	arls.c arsymtest.c asm-tst1.c asm-tst2.c asm-tst3.c asm-tst4.c \
+@@ -1423,29 +1423,29 @@
+ # Drop the 'u' flag that automake adds by default. It is incompatible
+ # with deterministic archives.
+ ARFLAGS = cr
+-@ADD_STACK_USAGE_WARNING_FALSE@STACK_USAGE_WARNING = 
++@ADD_STACK_USAGE_WARNING_FALSE@STACK_USAGE_WARNING =
+ 
+ # Warn about stack usage of more than 256K = 262144 bytes.
+ @ADD_STACK_USAGE_WARNING_TRUE@STACK_USAGE_WARNING = -Wstack-usage=262144
+-@ADD_STACK_USAGE_WARNING_FALSE@STACK_USAGE_NO_ERROR = 
++@ADD_STACK_USAGE_WARNING_FALSE@STACK_USAGE_NO_ERROR =
+ @ADD_STACK_USAGE_WARNING_TRUE@STACK_USAGE_NO_ERROR = -Wno-error=stack-usage=
+-@SANE_LOGICAL_OP_WARNING_FALSE@LOGICAL_OP_WARNING = 
++@SANE_LOGICAL_OP_WARNING_FALSE@LOGICAL_OP_WARNING =
+ @SANE_LOGICAL_OP_WARNING_TRUE@LOGICAL_OP_WARNING = -Wlogical-op
+-@HAVE_DUPLICATED_COND_WARNING_FALSE@DUPLICATED_COND_WARNING = 
++@HAVE_DUPLICATED_COND_WARNING_FALSE@DUPLICATED_COND_WARNING =
+ @HAVE_DUPLICATED_COND_WARNING_TRUE@DUPLICATED_COND_WARNING = -Wduplicated-cond
+-@HAVE_NULL_DEREFERENCE_WARNING_FALSE@NULL_DEREFERENCE_WARNING = 
++@HAVE_NULL_DEREFERENCE_WARNING_FALSE@NULL_DEREFERENCE_WARNING =
+ @HAVE_NULL_DEREFERENCE_WARNING_TRUE@NULL_DEREFERENCE_WARNING = -Wnull-dereference
+ @HAVE_IMPLICIT_FALLTHROUGH_5_WARNING_FALSE@@HAVE_IMPLICIT_FALLTHROUGH_WARNING_TRUE@IMPLICIT_FALLTHROUGH_WARNING = -Wimplicit-fallthrough
+ 
+ # Use strict fallthrough. Only __attribute__((fallthrough)) will prevent the
+ # warning
+ @HAVE_IMPLICIT_FALLTHROUGH_5_WARNING_TRUE@@HAVE_IMPLICIT_FALLTHROUGH_WARNING_TRUE@IMPLICIT_FALLTHROUGH_WARNING = -Wimplicit-fallthrough=5
+-@HAVE_IMPLICIT_FALLTHROUGH_WARNING_FALSE@IMPLICIT_FALLTHROUGH_WARNING = 
+-@HAVE_TRAMPOLINES_WARNING_FALSE@TRAMPOLINES_WARNING = 
++@HAVE_IMPLICIT_FALLTHROUGH_WARNING_FALSE@IMPLICIT_FALLTHROUGH_WARNING =
++@HAVE_TRAMPOLINES_WARNING_FALSE@TRAMPOLINES_WARNING =
+ @HAVE_TRAMPOLINES_WARNING_TRUE@TRAMPOLINES_WARNING = -Wtrampolines
+-@HAVE_NO_PACKED_NOT_ALIGNED_WARNING_FALSE@NO_PACKED_NOT_ALIGNED_WARNING = 
++@HAVE_NO_PACKED_NOT_ALIGNED_WARNING_FALSE@NO_PACKED_NOT_ALIGNED_WARNING =
+ @HAVE_NO_PACKED_NOT_ALIGNED_WARNING_TRUE@NO_PACKED_NOT_ALIGNED_WARNING = -Wno-packed-not-aligned
+-@HAVE_USE_AFTER_FREE3_WARNING_FALSE@USE_AFTER_FREE3_WARNING = 
++@HAVE_USE_AFTER_FREE3_WARNING_FALSE@USE_AFTER_FREE3_WARNING =
+ @HAVE_USE_AFTER_FREE3_WARNING_TRUE@USE_AFTER_FREE3_WARNING = -Wuse-after-free=3
+ AM_CFLAGS = -Wall -Wshadow -Wformat=2 \
+ 	    -Wold-style-definition -Wstrict-prototypes $(TRAMPOLINES_WARNING) \
+@@ -1477,16 +1477,16 @@
+ @FATAL_TEXTREL_TRUE@textrel_found = $(textrel_msg); exit 1
+ textrel_check = if $(READELF) -d $@ | grep -F -q TEXTREL; then $(textrel_found); fi
+ BUILD_RPATH = \$$ORIGIN/../libasm:\$$ORIGIN/../libdw:\$$ORIGIN/../backends:\$$ORIGIN/../libelf
+-AM_LDFLAGS = -Wl,-rpath-link,../libasm:../libdw:../libelf \
++AM_LDFLAGS =  \
+ 	$(am__append_2)
+ @TESTS_RPATH_FALSE@tests_rpath = no
+ @TESTS_RPATH_TRUE@tests_rpath = yes
+ asm_TESTS = asm-tst1 asm-tst2 asm-tst3 asm-tst4 asm-tst5 \
+ 	    asm-tst6 asm-tst7 asm-tst8 asm-tst9
+ 
+-@GCOV_FALSE@GCOV_FLAGS = 
++@GCOV_FALSE@GCOV_FLAGS =
+ @GCOV_TRUE@GCOV_FLAGS = -fprofile-arcs -ftest-coverage
+-@USE_ADDRESS_SANITIZER_FALSE@@USE_MEMORY_SANITIZER_FALSE@EXTRA_NLIST_CFLAGS = 
++@USE_ADDRESS_SANITIZER_FALSE@@USE_MEMORY_SANITIZER_FALSE@EXTRA_NLIST_CFLAGS =
+ @USE_ADDRESS_SANITIZER_FALSE@@USE_MEMORY_SANITIZER_TRUE@EXTRA_NLIST_CFLAGS = -fsanitize=memory -fsanitize-memory-track-origins
+ 
+ # test_nlist checks its own symbol table, and expects various symbols
+@@ -2076,7 +2076,7 @@
+ # Don't include any -I CPPFLAGS. Except when we install our own elf.h.
+ # For the gelf test we do want our own libelf.h, but nothing else.
+ BUILT_SOURCES = libelf.h
+-@INSTALL_ELFH_FALSE@system_elf_libelf_test_CPPFLAGS = 
++@INSTALL_ELFH_FALSE@system_elf_libelf_test_CPPFLAGS =
+ @INSTALL_ELFH_TRUE@system_elf_libelf_test_CPPFLAGS = -I$(top_srcdir)/libelf
+ @INSTALL_ELFH_FALSE@system_elf_gelf_test_CPPFLAGS = -I.
+ @INSTALL_ELFH_TRUE@system_elf_gelf_test_CPPFLAGS = -I$(top_srcdir)/libelf
+@@ -2125,511 +2125,511 @@
+ clean-checkPROGRAMS:
+ 	-$(am__rm_f) $(check_PROGRAMS)
+ 
+-addrcfi$(EXEEXT): $(addrcfi_OBJECTS) $(addrcfi_DEPENDENCIES) $(EXTRA_addrcfi_DEPENDENCIES) 
++addrcfi$(EXEEXT): $(addrcfi_OBJECTS) $(addrcfi_DEPENDENCIES) $(EXTRA_addrcfi_DEPENDENCIES)
+ 	@rm -f addrcfi$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(addrcfi_OBJECTS) $(addrcfi_LDADD) $(LIBS)
+ 
+-addrscopes$(EXEEXT): $(addrscopes_OBJECTS) $(addrscopes_DEPENDENCIES) $(EXTRA_addrscopes_DEPENDENCIES) 
++addrscopes$(EXEEXT): $(addrscopes_OBJECTS) $(addrscopes_DEPENDENCIES) $(EXTRA_addrscopes_DEPENDENCIES)
+ 	@rm -f addrscopes$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(addrscopes_OBJECTS) $(addrscopes_LDADD) $(LIBS)
+ 
+-addsections$(EXEEXT): $(addsections_OBJECTS) $(addsections_DEPENDENCIES) $(EXTRA_addsections_DEPENDENCIES) 
++addsections$(EXEEXT): $(addsections_OBJECTS) $(addsections_DEPENDENCIES) $(EXTRA_addsections_DEPENDENCIES)
+ 	@rm -f addsections$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(addsections_OBJECTS) $(addsections_LDADD) $(LIBS)
+ 
+-aggregate_size$(EXEEXT): $(aggregate_size_OBJECTS) $(aggregate_size_DEPENDENCIES) $(EXTRA_aggregate_size_DEPENDENCIES) 
++aggregate_size$(EXEEXT): $(aggregate_size_OBJECTS) $(aggregate_size_DEPENDENCIES) $(EXTRA_aggregate_size_DEPENDENCIES)
+ 	@rm -f aggregate_size$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(aggregate_size_OBJECTS) $(aggregate_size_LDADD) $(LIBS)
+ 
+-all-dwarf-ranges$(EXEEXT): $(all_dwarf_ranges_OBJECTS) $(all_dwarf_ranges_DEPENDENCIES) $(EXTRA_all_dwarf_ranges_DEPENDENCIES) 
++all-dwarf-ranges$(EXEEXT): $(all_dwarf_ranges_OBJECTS) $(all_dwarf_ranges_DEPENDENCIES) $(EXTRA_all_dwarf_ranges_DEPENDENCIES)
+ 	@rm -f all-dwarf-ranges$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(all_dwarf_ranges_OBJECTS) $(all_dwarf_ranges_LDADD) $(LIBS)
+ 
+-alldts$(EXEEXT): $(alldts_OBJECTS) $(alldts_DEPENDENCIES) $(EXTRA_alldts_DEPENDENCIES) 
++alldts$(EXEEXT): $(alldts_OBJECTS) $(alldts_DEPENDENCIES) $(EXTRA_alldts_DEPENDENCIES)
+ 	@rm -f alldts$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(alldts_OBJECTS) $(alldts_LDADD) $(LIBS)
+ 
+-allfcts$(EXEEXT): $(allfcts_OBJECTS) $(allfcts_DEPENDENCIES) $(EXTRA_allfcts_DEPENDENCIES) 
++allfcts$(EXEEXT): $(allfcts_OBJECTS) $(allfcts_DEPENDENCIES) $(EXTRA_allfcts_DEPENDENCIES)
+ 	@rm -f allfcts$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(allfcts_OBJECTS) $(allfcts_LDADD) $(LIBS)
+ 
+-allregs$(EXEEXT): $(allregs_OBJECTS) $(allregs_DEPENDENCIES) $(EXTRA_allregs_DEPENDENCIES) 
++allregs$(EXEEXT): $(allregs_OBJECTS) $(allregs_DEPENDENCIES) $(EXTRA_allregs_DEPENDENCIES)
+ 	@rm -f allregs$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(allregs_OBJECTS) $(allregs_LDADD) $(LIBS)
+ 
+-arextract$(EXEEXT): $(arextract_OBJECTS) $(arextract_DEPENDENCIES) $(EXTRA_arextract_DEPENDENCIES) 
++arextract$(EXEEXT): $(arextract_OBJECTS) $(arextract_DEPENDENCIES) $(EXTRA_arextract_DEPENDENCIES)
+ 	@rm -f arextract$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(arextract_OBJECTS) $(arextract_LDADD) $(LIBS)
+ 
+-arls$(EXEEXT): $(arls_OBJECTS) $(arls_DEPENDENCIES) $(EXTRA_arls_DEPENDENCIES) 
++arls$(EXEEXT): $(arls_OBJECTS) $(arls_DEPENDENCIES) $(EXTRA_arls_DEPENDENCIES)
+ 	@rm -f arls$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(arls_OBJECTS) $(arls_LDADD) $(LIBS)
+ 
+-arsymtest$(EXEEXT): $(arsymtest_OBJECTS) $(arsymtest_DEPENDENCIES) $(EXTRA_arsymtest_DEPENDENCIES) 
++arsymtest$(EXEEXT): $(arsymtest_OBJECTS) $(arsymtest_DEPENDENCIES) $(EXTRA_arsymtest_DEPENDENCIES)
+ 	@rm -f arsymtest$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(arsymtest_OBJECTS) $(arsymtest_LDADD) $(LIBS)
+ 
+-asm-tst1$(EXEEXT): $(asm_tst1_OBJECTS) $(asm_tst1_DEPENDENCIES) $(EXTRA_asm_tst1_DEPENDENCIES) 
++asm-tst1$(EXEEXT): $(asm_tst1_OBJECTS) $(asm_tst1_DEPENDENCIES) $(EXTRA_asm_tst1_DEPENDENCIES)
+ 	@rm -f asm-tst1$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(asm_tst1_OBJECTS) $(asm_tst1_LDADD) $(LIBS)
+ 
+-asm-tst2$(EXEEXT): $(asm_tst2_OBJECTS) $(asm_tst2_DEPENDENCIES) $(EXTRA_asm_tst2_DEPENDENCIES) 
++asm-tst2$(EXEEXT): $(asm_tst2_OBJECTS) $(asm_tst2_DEPENDENCIES) $(EXTRA_asm_tst2_DEPENDENCIES)
+ 	@rm -f asm-tst2$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(asm_tst2_OBJECTS) $(asm_tst2_LDADD) $(LIBS)
+ 
+-asm-tst3$(EXEEXT): $(asm_tst3_OBJECTS) $(asm_tst3_DEPENDENCIES) $(EXTRA_asm_tst3_DEPENDENCIES) 
++asm-tst3$(EXEEXT): $(asm_tst3_OBJECTS) $(asm_tst3_DEPENDENCIES) $(EXTRA_asm_tst3_DEPENDENCIES)
+ 	@rm -f asm-tst3$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(asm_tst3_OBJECTS) $(asm_tst3_LDADD) $(LIBS)
+ 
+-asm-tst4$(EXEEXT): $(asm_tst4_OBJECTS) $(asm_tst4_DEPENDENCIES) $(EXTRA_asm_tst4_DEPENDENCIES) 
++asm-tst4$(EXEEXT): $(asm_tst4_OBJECTS) $(asm_tst4_DEPENDENCIES) $(EXTRA_asm_tst4_DEPENDENCIES)
+ 	@rm -f asm-tst4$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(asm_tst4_OBJECTS) $(asm_tst4_LDADD) $(LIBS)
+ 
+-asm-tst5$(EXEEXT): $(asm_tst5_OBJECTS) $(asm_tst5_DEPENDENCIES) $(EXTRA_asm_tst5_DEPENDENCIES) 
++asm-tst5$(EXEEXT): $(asm_tst5_OBJECTS) $(asm_tst5_DEPENDENCIES) $(EXTRA_asm_tst5_DEPENDENCIES)
+ 	@rm -f asm-tst5$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(asm_tst5_OBJECTS) $(asm_tst5_LDADD) $(LIBS)
+ 
+-asm-tst6$(EXEEXT): $(asm_tst6_OBJECTS) $(asm_tst6_DEPENDENCIES) $(EXTRA_asm_tst6_DEPENDENCIES) 
++asm-tst6$(EXEEXT): $(asm_tst6_OBJECTS) $(asm_tst6_DEPENDENCIES) $(EXTRA_asm_tst6_DEPENDENCIES)
+ 	@rm -f asm-tst6$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(asm_tst6_OBJECTS) $(asm_tst6_LDADD) $(LIBS)
+ 
+-asm-tst7$(EXEEXT): $(asm_tst7_OBJECTS) $(asm_tst7_DEPENDENCIES) $(EXTRA_asm_tst7_DEPENDENCIES) 
++asm-tst7$(EXEEXT): $(asm_tst7_OBJECTS) $(asm_tst7_DEPENDENCIES) $(EXTRA_asm_tst7_DEPENDENCIES)
+ 	@rm -f asm-tst7$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(asm_tst7_OBJECTS) $(asm_tst7_LDADD) $(LIBS)
+ 
+-asm-tst8$(EXEEXT): $(asm_tst8_OBJECTS) $(asm_tst8_DEPENDENCIES) $(EXTRA_asm_tst8_DEPENDENCIES) 
++asm-tst8$(EXEEXT): $(asm_tst8_OBJECTS) $(asm_tst8_DEPENDENCIES) $(EXTRA_asm_tst8_DEPENDENCIES)
+ 	@rm -f asm-tst8$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(asm_tst8_OBJECTS) $(asm_tst8_LDADD) $(LIBS)
+ 
+-asm-tst9$(EXEEXT): $(asm_tst9_OBJECTS) $(asm_tst9_DEPENDENCIES) $(EXTRA_asm_tst9_DEPENDENCIES) 
++asm-tst9$(EXEEXT): $(asm_tst9_OBJECTS) $(asm_tst9_DEPENDENCIES) $(EXTRA_asm_tst9_DEPENDENCIES)
+ 	@rm -f asm-tst9$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(asm_tst9_OBJECTS) $(asm_tst9_LDADD) $(LIBS)
+ 
+-attr-integrate-skel$(EXEEXT): $(attr_integrate_skel_OBJECTS) $(attr_integrate_skel_DEPENDENCIES) $(EXTRA_attr_integrate_skel_DEPENDENCIES) 
++attr-integrate-skel$(EXEEXT): $(attr_integrate_skel_OBJECTS) $(attr_integrate_skel_DEPENDENCIES) $(EXTRA_attr_integrate_skel_DEPENDENCIES)
+ 	@rm -f attr-integrate-skel$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(attr_integrate_skel_OBJECTS) $(attr_integrate_skel_LDADD) $(LIBS)
+ 
+-backtrace$(EXEEXT): $(backtrace_OBJECTS) $(backtrace_DEPENDENCIES) $(EXTRA_backtrace_DEPENDENCIES) 
++backtrace$(EXEEXT): $(backtrace_OBJECTS) $(backtrace_DEPENDENCIES) $(EXTRA_backtrace_DEPENDENCIES)
+ 	@rm -f backtrace$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(backtrace_OBJECTS) $(backtrace_LDADD) $(LIBS)
+ 
+-backtrace-child$(EXEEXT): $(backtrace_child_OBJECTS) $(backtrace_child_DEPENDENCIES) $(EXTRA_backtrace_child_DEPENDENCIES) 
++backtrace-child$(EXEEXT): $(backtrace_child_OBJECTS) $(backtrace_child_DEPENDENCIES) $(EXTRA_backtrace_child_DEPENDENCIES)
+ 	@rm -f backtrace-child$(EXEEXT)
+ 	$(AM_V_CCLD)$(backtrace_child_LINK) $(backtrace_child_OBJECTS) $(backtrace_child_LDADD) $(LIBS)
+ 
+-backtrace-data$(EXEEXT): $(backtrace_data_OBJECTS) $(backtrace_data_DEPENDENCIES) $(EXTRA_backtrace_data_DEPENDENCIES) 
++backtrace-data$(EXEEXT): $(backtrace_data_OBJECTS) $(backtrace_data_DEPENDENCIES) $(EXTRA_backtrace_data_DEPENDENCIES)
+ 	@rm -f backtrace-data$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(backtrace_data_OBJECTS) $(backtrace_data_LDADD) $(LIBS)
+ 
+-backtrace-dwarf$(EXEEXT): $(backtrace_dwarf_OBJECTS) $(backtrace_dwarf_DEPENDENCIES) $(EXTRA_backtrace_dwarf_DEPENDENCIES) 
++backtrace-dwarf$(EXEEXT): $(backtrace_dwarf_OBJECTS) $(backtrace_dwarf_DEPENDENCIES) $(EXTRA_backtrace_dwarf_DEPENDENCIES)
+ 	@rm -f backtrace-dwarf$(EXEEXT)
+ 	$(AM_V_CCLD)$(backtrace_dwarf_LINK) $(backtrace_dwarf_OBJECTS) $(backtrace_dwarf_LDADD) $(LIBS)
+ 
+-buildid$(EXEEXT): $(buildid_OBJECTS) $(buildid_DEPENDENCIES) $(EXTRA_buildid_DEPENDENCIES) 
++buildid$(EXEEXT): $(buildid_OBJECTS) $(buildid_DEPENDENCIES) $(EXTRA_buildid_DEPENDENCIES)
+ 	@rm -f buildid$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(buildid_OBJECTS) $(buildid_LDADD) $(LIBS)
+ 
+-cu-dwp-section-info$(EXEEXT): $(cu_dwp_section_info_OBJECTS) $(cu_dwp_section_info_DEPENDENCIES) $(EXTRA_cu_dwp_section_info_DEPENDENCIES) 
++cu-dwp-section-info$(EXEEXT): $(cu_dwp_section_info_OBJECTS) $(cu_dwp_section_info_DEPENDENCIES) $(EXTRA_cu_dwp_section_info_DEPENDENCIES)
+ 	@rm -f cu-dwp-section-info$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(cu_dwp_section_info_OBJECTS) $(cu_dwp_section_info_LDADD) $(LIBS)
+ 
+-debugaltlink$(EXEEXT): $(debugaltlink_OBJECTS) $(debugaltlink_DEPENDENCIES) $(EXTRA_debugaltlink_DEPENDENCIES) 
++debugaltlink$(EXEEXT): $(debugaltlink_OBJECTS) $(debugaltlink_DEPENDENCIES) $(EXTRA_debugaltlink_DEPENDENCIES)
+ 	@rm -f debugaltlink$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(debugaltlink_OBJECTS) $(debugaltlink_LDADD) $(LIBS)
+ 
+-debuginfod_build_id_find$(EXEEXT): $(debuginfod_build_id_find_OBJECTS) $(debuginfod_build_id_find_DEPENDENCIES) $(EXTRA_debuginfod_build_id_find_DEPENDENCIES) 
++debuginfod_build_id_find$(EXEEXT): $(debuginfod_build_id_find_OBJECTS) $(debuginfod_build_id_find_DEPENDENCIES) $(EXTRA_debuginfod_build_id_find_DEPENDENCIES)
+ 	@rm -f debuginfod_build_id_find$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(debuginfod_build_id_find_OBJECTS) $(debuginfod_build_id_find_LDADD) $(LIBS)
+ 
+-debuglink$(EXEEXT): $(debuglink_OBJECTS) $(debuglink_DEPENDENCIES) $(EXTRA_debuglink_DEPENDENCIES) 
++debuglink$(EXEEXT): $(debuglink_OBJECTS) $(debuglink_DEPENDENCIES) $(EXTRA_debuglink_DEPENDENCIES)
+ 	@rm -f debuglink$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(debuglink_OBJECTS) $(debuglink_LDADD) $(LIBS)
+ 
+-declfiles$(EXEEXT): $(declfiles_OBJECTS) $(declfiles_DEPENDENCIES) $(EXTRA_declfiles_DEPENDENCIES) 
++declfiles$(EXEEXT): $(declfiles_OBJECTS) $(declfiles_DEPENDENCIES) $(EXTRA_declfiles_DEPENDENCIES)
+ 	@rm -f declfiles$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(declfiles_OBJECTS) $(declfiles_LDADD) $(LIBS)
+ 
+-deleted$(EXEEXT): $(deleted_OBJECTS) $(deleted_DEPENDENCIES) $(EXTRA_deleted_DEPENDENCIES) 
++deleted$(EXEEXT): $(deleted_OBJECTS) $(deleted_DEPENDENCIES) $(EXTRA_deleted_DEPENDENCIES)
+ 	@rm -f deleted$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(deleted_OBJECTS) $(deleted_LDADD) $(LIBS)
+ 
+-deleted-lib.so$(EXEEXT): $(deleted_lib_so_OBJECTS) $(deleted_lib_so_DEPENDENCIES) $(EXTRA_deleted_lib_so_DEPENDENCIES) 
++deleted-lib.so$(EXEEXT): $(deleted_lib_so_OBJECTS) $(deleted_lib_so_DEPENDENCIES) $(EXTRA_deleted_lib_so_DEPENDENCIES)
+ 	@rm -f deleted-lib.so$(EXEEXT)
+ 	$(AM_V_CCLD)$(deleted_lib_so_LINK) $(deleted_lib_so_OBJECTS) $(deleted_lib_so_LDADD) $(LIBS)
+ 
+-dwarf-die-addr-die$(EXEEXT): $(dwarf_die_addr_die_OBJECTS) $(dwarf_die_addr_die_DEPENDENCIES) $(EXTRA_dwarf_die_addr_die_DEPENDENCIES) 
++dwarf-die-addr-die$(EXEEXT): $(dwarf_die_addr_die_OBJECTS) $(dwarf_die_addr_die_DEPENDENCIES) $(EXTRA_dwarf_die_addr_die_DEPENDENCIES)
+ 	@rm -f dwarf-die-addr-die$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwarf_die_addr_die_OBJECTS) $(dwarf_die_addr_die_LDADD) $(LIBS)
+ 
+-dwarf-getmacros$(EXEEXT): $(dwarf_getmacros_OBJECTS) $(dwarf_getmacros_DEPENDENCIES) $(EXTRA_dwarf_getmacros_DEPENDENCIES) 
++dwarf-getmacros$(EXEEXT): $(dwarf_getmacros_OBJECTS) $(dwarf_getmacros_DEPENDENCIES) $(EXTRA_dwarf_getmacros_DEPENDENCIES)
+ 	@rm -f dwarf-getmacros$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwarf_getmacros_OBJECTS) $(dwarf_getmacros_LDADD) $(LIBS)
+ 
+-dwarf-getstring$(EXEEXT): $(dwarf_getstring_OBJECTS) $(dwarf_getstring_DEPENDENCIES) $(EXTRA_dwarf_getstring_DEPENDENCIES) 
++dwarf-getstring$(EXEEXT): $(dwarf_getstring_OBJECTS) $(dwarf_getstring_DEPENDENCIES) $(EXTRA_dwarf_getstring_DEPENDENCIES)
+ 	@rm -f dwarf-getstring$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwarf_getstring_OBJECTS) $(dwarf_getstring_LDADD) $(LIBS)
+ 
+-dwarf-ranges$(EXEEXT): $(dwarf_ranges_OBJECTS) $(dwarf_ranges_DEPENDENCIES) $(EXTRA_dwarf_ranges_DEPENDENCIES) 
++dwarf-ranges$(EXEEXT): $(dwarf_ranges_OBJECTS) $(dwarf_ranges_DEPENDENCIES) $(EXTRA_dwarf_ranges_DEPENDENCIES)
+ 	@rm -f dwarf-ranges$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwarf_ranges_OBJECTS) $(dwarf_ranges_LDADD) $(LIBS)
+ 
+-dwarf_default_lower_bound$(EXEEXT): $(dwarf_default_lower_bound_OBJECTS) $(dwarf_default_lower_bound_DEPENDENCIES) $(EXTRA_dwarf_default_lower_bound_DEPENDENCIES) 
++dwarf_default_lower_bound$(EXEEXT): $(dwarf_default_lower_bound_OBJECTS) $(dwarf_default_lower_bound_DEPENDENCIES) $(EXTRA_dwarf_default_lower_bound_DEPENDENCIES)
+ 	@rm -f dwarf_default_lower_bound$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwarf_default_lower_bound_OBJECTS) $(dwarf_default_lower_bound_LDADD) $(LIBS)
+ 
+-dwarf_language_lower_bound$(EXEEXT): $(dwarf_language_lower_bound_OBJECTS) $(dwarf_language_lower_bound_DEPENDENCIES) $(EXTRA_dwarf_language_lower_bound_DEPENDENCIES) 
++dwarf_language_lower_bound$(EXEEXT): $(dwarf_language_lower_bound_OBJECTS) $(dwarf_language_lower_bound_DEPENDENCIES) $(EXTRA_dwarf_language_lower_bound_DEPENDENCIES)
+ 	@rm -f dwarf_language_lower_bound$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwarf_language_lower_bound_OBJECTS) $(dwarf_language_lower_bound_LDADD) $(LIBS)
+ 
+-dwarfcfi$(EXEEXT): $(dwarfcfi_OBJECTS) $(dwarfcfi_DEPENDENCIES) $(EXTRA_dwarfcfi_DEPENDENCIES) 
++dwarfcfi$(EXEEXT): $(dwarfcfi_OBJECTS) $(dwarfcfi_DEPENDENCIES) $(EXTRA_dwarfcfi_DEPENDENCIES)
+ 	@rm -f dwarfcfi$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwarfcfi_OBJECTS) $(dwarfcfi_LDADD) $(LIBS)
+ 
+-dwelf_elf_e_machine_string$(EXEEXT): $(dwelf_elf_e_machine_string_OBJECTS) $(dwelf_elf_e_machine_string_DEPENDENCIES) $(EXTRA_dwelf_elf_e_machine_string_DEPENDENCIES) 
++dwelf_elf_e_machine_string$(EXEEXT): $(dwelf_elf_e_machine_string_OBJECTS) $(dwelf_elf_e_machine_string_DEPENDENCIES) $(EXTRA_dwelf_elf_e_machine_string_DEPENDENCIES)
+ 	@rm -f dwelf_elf_e_machine_string$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwelf_elf_e_machine_string_OBJECTS) $(dwelf_elf_e_machine_string_LDADD) $(LIBS)
+ 
+-dwelfgnucompressed$(EXEEXT): $(dwelfgnucompressed_OBJECTS) $(dwelfgnucompressed_DEPENDENCIES) $(EXTRA_dwelfgnucompressed_DEPENDENCIES) 
++dwelfgnucompressed$(EXEEXT): $(dwelfgnucompressed_OBJECTS) $(dwelfgnucompressed_DEPENDENCIES) $(EXTRA_dwelfgnucompressed_DEPENDENCIES)
+ 	@rm -f dwelfgnucompressed$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwelfgnucompressed_OBJECTS) $(dwelfgnucompressed_LDADD) $(LIBS)
+ 
+-dwfl-addr-sect$(EXEEXT): $(dwfl_addr_sect_OBJECTS) $(dwfl_addr_sect_DEPENDENCIES) $(EXTRA_dwfl_addr_sect_DEPENDENCIES) 
++dwfl-addr-sect$(EXEEXT): $(dwfl_addr_sect_OBJECTS) $(dwfl_addr_sect_DEPENDENCIES) $(EXTRA_dwfl_addr_sect_DEPENDENCIES)
+ 	@rm -f dwfl-addr-sect$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwfl_addr_sect_OBJECTS) $(dwfl_addr_sect_LDADD) $(LIBS)
+ 
+-dwfl-bug-addr-overflow$(EXEEXT): $(dwfl_bug_addr_overflow_OBJECTS) $(dwfl_bug_addr_overflow_DEPENDENCIES) $(EXTRA_dwfl_bug_addr_overflow_DEPENDENCIES) 
++dwfl-bug-addr-overflow$(EXEEXT): $(dwfl_bug_addr_overflow_OBJECTS) $(dwfl_bug_addr_overflow_DEPENDENCIES) $(EXTRA_dwfl_bug_addr_overflow_DEPENDENCIES)
+ 	@rm -f dwfl-bug-addr-overflow$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwfl_bug_addr_overflow_OBJECTS) $(dwfl_bug_addr_overflow_LDADD) $(LIBS)
+ 
+-dwfl-bug-fd-leak$(EXEEXT): $(dwfl_bug_fd_leak_OBJECTS) $(dwfl_bug_fd_leak_DEPENDENCIES) $(EXTRA_dwfl_bug_fd_leak_DEPENDENCIES) 
++dwfl-bug-fd-leak$(EXEEXT): $(dwfl_bug_fd_leak_OBJECTS) $(dwfl_bug_fd_leak_DEPENDENCIES) $(EXTRA_dwfl_bug_fd_leak_DEPENDENCIES)
+ 	@rm -f dwfl-bug-fd-leak$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwfl_bug_fd_leak_OBJECTS) $(dwfl_bug_fd_leak_LDADD) $(LIBS)
+ 
+-dwfl-bug-getmodules$(EXEEXT): $(dwfl_bug_getmodules_OBJECTS) $(dwfl_bug_getmodules_DEPENDENCIES) $(EXTRA_dwfl_bug_getmodules_DEPENDENCIES) 
++dwfl-bug-getmodules$(EXEEXT): $(dwfl_bug_getmodules_OBJECTS) $(dwfl_bug_getmodules_DEPENDENCIES) $(EXTRA_dwfl_bug_getmodules_DEPENDENCIES)
+ 	@rm -f dwfl-bug-getmodules$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwfl_bug_getmodules_OBJECTS) $(dwfl_bug_getmodules_LDADD) $(LIBS)
+ 
+-dwfl-bug-report$(EXEEXT): $(dwfl_bug_report_OBJECTS) $(dwfl_bug_report_DEPENDENCIES) $(EXTRA_dwfl_bug_report_DEPENDENCIES) 
++dwfl-bug-report$(EXEEXT): $(dwfl_bug_report_OBJECTS) $(dwfl_bug_report_DEPENDENCIES) $(EXTRA_dwfl_bug_report_DEPENDENCIES)
+ 	@rm -f dwfl-bug-report$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwfl_bug_report_OBJECTS) $(dwfl_bug_report_LDADD) $(LIBS)
+ 
+-dwfl-core-noncontig$(EXEEXT): $(dwfl_core_noncontig_OBJECTS) $(dwfl_core_noncontig_DEPENDENCIES) $(EXTRA_dwfl_core_noncontig_DEPENDENCIES) 
++dwfl-core-noncontig$(EXEEXT): $(dwfl_core_noncontig_OBJECTS) $(dwfl_core_noncontig_DEPENDENCIES) $(EXTRA_dwfl_core_noncontig_DEPENDENCIES)
+ 	@rm -f dwfl-core-noncontig$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwfl_core_noncontig_OBJECTS) $(dwfl_core_noncontig_LDADD) $(LIBS)
+ 
+-dwfl-proc-attach$(EXEEXT): $(dwfl_proc_attach_OBJECTS) $(dwfl_proc_attach_DEPENDENCIES) $(EXTRA_dwfl_proc_attach_DEPENDENCIES) 
++dwfl-proc-attach$(EXEEXT): $(dwfl_proc_attach_OBJECTS) $(dwfl_proc_attach_DEPENDENCIES) $(EXTRA_dwfl_proc_attach_DEPENDENCIES)
+ 	@rm -f dwfl-proc-attach$(EXEEXT)
+ 	$(AM_V_CCLD)$(dwfl_proc_attach_LINK) $(dwfl_proc_attach_OBJECTS) $(dwfl_proc_attach_LDADD) $(LIBS)
+ 
+-dwfl-report-elf-align$(EXEEXT): $(dwfl_report_elf_align_OBJECTS) $(dwfl_report_elf_align_DEPENDENCIES) $(EXTRA_dwfl_report_elf_align_DEPENDENCIES) 
++dwfl-report-elf-align$(EXEEXT): $(dwfl_report_elf_align_OBJECTS) $(dwfl_report_elf_align_DEPENDENCIES) $(EXTRA_dwfl_report_elf_align_DEPENDENCIES)
+ 	@rm -f dwfl-report-elf-align$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwfl_report_elf_align_OBJECTS) $(dwfl_report_elf_align_LDADD) $(LIBS)
+ 
+-dwfl-report-offline-memory$(EXEEXT): $(dwfl_report_offline_memory_OBJECTS) $(dwfl_report_offline_memory_DEPENDENCIES) $(EXTRA_dwfl_report_offline_memory_DEPENDENCIES) 
++dwfl-report-offline-memory$(EXEEXT): $(dwfl_report_offline_memory_OBJECTS) $(dwfl_report_offline_memory_DEPENDENCIES) $(EXTRA_dwfl_report_offline_memory_DEPENDENCIES)
+ 	@rm -f dwfl-report-offline-memory$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwfl_report_offline_memory_OBJECTS) $(dwfl_report_offline_memory_LDADD) $(LIBS)
+ 
+-dwfl-report-segment-contiguous$(EXEEXT): $(dwfl_report_segment_contiguous_OBJECTS) $(dwfl_report_segment_contiguous_DEPENDENCIES) $(EXTRA_dwfl_report_segment_contiguous_DEPENDENCIES) 
++dwfl-report-segment-contiguous$(EXEEXT): $(dwfl_report_segment_contiguous_OBJECTS) $(dwfl_report_segment_contiguous_DEPENDENCIES) $(EXTRA_dwfl_report_segment_contiguous_DEPENDENCIES)
+ 	@rm -f dwfl-report-segment-contiguous$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwfl_report_segment_contiguous_OBJECTS) $(dwfl_report_segment_contiguous_LDADD) $(LIBS)
+ 
+-dwfllines$(EXEEXT): $(dwfllines_OBJECTS) $(dwfllines_DEPENDENCIES) $(EXTRA_dwfllines_DEPENDENCIES) 
++dwfllines$(EXEEXT): $(dwfllines_OBJECTS) $(dwfllines_DEPENDENCIES) $(EXTRA_dwfllines_DEPENDENCIES)
+ 	@rm -f dwfllines$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwfllines_OBJECTS) $(dwfllines_LDADD) $(LIBS)
+ 
+-dwflmodtest$(EXEEXT): $(dwflmodtest_OBJECTS) $(dwflmodtest_DEPENDENCIES) $(EXTRA_dwflmodtest_DEPENDENCIES) 
++dwflmodtest$(EXEEXT): $(dwflmodtest_OBJECTS) $(dwflmodtest_DEPENDENCIES) $(EXTRA_dwflmodtest_DEPENDENCIES)
+ 	@rm -f dwflmodtest$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwflmodtest_OBJECTS) $(dwflmodtest_LDADD) $(LIBS)
+ 
+-dwflsyms$(EXEEXT): $(dwflsyms_OBJECTS) $(dwflsyms_DEPENDENCIES) $(EXTRA_dwflsyms_DEPENDENCIES) 
++dwflsyms$(EXEEXT): $(dwflsyms_OBJECTS) $(dwflsyms_DEPENDENCIES) $(EXTRA_dwflsyms_DEPENDENCIES)
+ 	@rm -f dwflsyms$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(dwflsyms_OBJECTS) $(dwflsyms_LDADD) $(LIBS)
+ 
+-early-offscn$(EXEEXT): $(early_offscn_OBJECTS) $(early_offscn_DEPENDENCIES) $(EXTRA_early_offscn_DEPENDENCIES) 
++early-offscn$(EXEEXT): $(early_offscn_OBJECTS) $(early_offscn_DEPENDENCIES) $(EXTRA_early_offscn_DEPENDENCIES)
+ 	@rm -f early-offscn$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(early_offscn_OBJECTS) $(early_offscn_LDADD) $(LIBS)
+ 
+-ecp$(EXEEXT): $(ecp_OBJECTS) $(ecp_DEPENDENCIES) $(EXTRA_ecp_DEPENDENCIES) 
++ecp$(EXEEXT): $(ecp_OBJECTS) $(ecp_DEPENDENCIES) $(EXTRA_ecp_DEPENDENCIES)
+ 	@rm -f ecp$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(ecp_OBJECTS) $(ecp_LDADD) $(LIBS)
+ 
+-elf-print-reloc-syms$(EXEEXT): $(elf_print_reloc_syms_OBJECTS) $(elf_print_reloc_syms_DEPENDENCIES) $(EXTRA_elf_print_reloc_syms_DEPENDENCIES) 
++elf-print-reloc-syms$(EXEEXT): $(elf_print_reloc_syms_OBJECTS) $(elf_print_reloc_syms_DEPENDENCIES) $(EXTRA_elf_print_reloc_syms_DEPENDENCIES)
+ 	@rm -f elf-print-reloc-syms$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(elf_print_reloc_syms_OBJECTS) $(elf_print_reloc_syms_LDADD) $(LIBS)
+ 
+-elfcopy$(EXEEXT): $(elfcopy_OBJECTS) $(elfcopy_DEPENDENCIES) $(EXTRA_elfcopy_DEPENDENCIES) 
++elfcopy$(EXEEXT): $(elfcopy_OBJECTS) $(elfcopy_DEPENDENCIES) $(EXTRA_elfcopy_DEPENDENCIES)
+ 	@rm -f elfcopy$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(elfcopy_OBJECTS) $(elfcopy_LDADD) $(LIBS)
+ 
+-elfgetchdr$(EXEEXT): $(elfgetchdr_OBJECTS) $(elfgetchdr_DEPENDENCIES) $(EXTRA_elfgetchdr_DEPENDENCIES) 
++elfgetchdr$(EXEEXT): $(elfgetchdr_OBJECTS) $(elfgetchdr_DEPENDENCIES) $(EXTRA_elfgetchdr_DEPENDENCIES)
+ 	@rm -f elfgetchdr$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(elfgetchdr_OBJECTS) $(elfgetchdr_LDADD) $(LIBS)
+ 
+-elfgetzdata$(EXEEXT): $(elfgetzdata_OBJECTS) $(elfgetzdata_DEPENDENCIES) $(EXTRA_elfgetzdata_DEPENDENCIES) 
++elfgetzdata$(EXEEXT): $(elfgetzdata_OBJECTS) $(elfgetzdata_DEPENDENCIES) $(EXTRA_elfgetzdata_DEPENDENCIES)
+ 	@rm -f elfgetzdata$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(elfgetzdata_OBJECTS) $(elfgetzdata_LDADD) $(LIBS)
+ 
+-elfputzdata$(EXEEXT): $(elfputzdata_OBJECTS) $(elfputzdata_DEPENDENCIES) $(EXTRA_elfputzdata_DEPENDENCIES) 
++elfputzdata$(EXEEXT): $(elfputzdata_OBJECTS) $(elfputzdata_DEPENDENCIES) $(EXTRA_elfputzdata_DEPENDENCIES)
+ 	@rm -f elfputzdata$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(elfputzdata_OBJECTS) $(elfputzdata_LDADD) $(LIBS)
+ 
+-elfrdwrnop$(EXEEXT): $(elfrdwrnop_OBJECTS) $(elfrdwrnop_DEPENDENCIES) $(EXTRA_elfrdwrnop_DEPENDENCIES) 
++elfrdwrnop$(EXEEXT): $(elfrdwrnop_OBJECTS) $(elfrdwrnop_DEPENDENCIES) $(EXTRA_elfrdwrnop_DEPENDENCIES)
+ 	@rm -f elfrdwrnop$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(elfrdwrnop_OBJECTS) $(elfrdwrnop_LDADD) $(LIBS)
+ 
+-elfshphehdr$(EXEEXT): $(elfshphehdr_OBJECTS) $(elfshphehdr_DEPENDENCIES) $(EXTRA_elfshphehdr_DEPENDENCIES) 
++elfshphehdr$(EXEEXT): $(elfshphehdr_OBJECTS) $(elfshphehdr_DEPENDENCIES) $(EXTRA_elfshphehdr_DEPENDENCIES)
+ 	@rm -f elfshphehdr$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(elfshphehdr_OBJECTS) $(elfshphehdr_LDADD) $(LIBS)
+ 
+-elfstrmerge$(EXEEXT): $(elfstrmerge_OBJECTS) $(elfstrmerge_DEPENDENCIES) $(EXTRA_elfstrmerge_DEPENDENCIES) 
++elfstrmerge$(EXEEXT): $(elfstrmerge_OBJECTS) $(elfstrmerge_DEPENDENCIES) $(EXTRA_elfstrmerge_DEPENDENCIES)
+ 	@rm -f elfstrmerge$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(elfstrmerge_OBJECTS) $(elfstrmerge_LDADD) $(LIBS)
+ 
+-elfstrtab$(EXEEXT): $(elfstrtab_OBJECTS) $(elfstrtab_DEPENDENCIES) $(EXTRA_elfstrtab_DEPENDENCIES) 
++elfstrtab$(EXEEXT): $(elfstrtab_OBJECTS) $(elfstrtab_DEPENDENCIES) $(EXTRA_elfstrtab_DEPENDENCIES)
+ 	@rm -f elfstrtab$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(elfstrtab_OBJECTS) $(elfstrtab_LDADD) $(LIBS)
+ 
+-emptyfile$(EXEEXT): $(emptyfile_OBJECTS) $(emptyfile_DEPENDENCIES) $(EXTRA_emptyfile_DEPENDENCIES) 
++emptyfile$(EXEEXT): $(emptyfile_OBJECTS) $(emptyfile_DEPENDENCIES) $(EXTRA_emptyfile_DEPENDENCIES)
+ 	@rm -f emptyfile$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(emptyfile_OBJECTS) $(emptyfile_LDADD) $(LIBS)
+ 
+-eu_search_cfi$(EXEEXT): $(eu_search_cfi_OBJECTS) $(eu_search_cfi_DEPENDENCIES) $(EXTRA_eu_search_cfi_DEPENDENCIES) 
++eu_search_cfi$(EXEEXT): $(eu_search_cfi_OBJECTS) $(eu_search_cfi_DEPENDENCIES) $(EXTRA_eu_search_cfi_DEPENDENCIES)
+ 	@rm -f eu_search_cfi$(EXEEXT)
+ 	$(AM_V_CCLD)$(eu_search_cfi_LINK) $(eu_search_cfi_OBJECTS) $(eu_search_cfi_LDADD) $(LIBS)
+ 
+-eu_search_die$(EXEEXT): $(eu_search_die_OBJECTS) $(eu_search_die_DEPENDENCIES) $(EXTRA_eu_search_die_DEPENDENCIES) 
++eu_search_die$(EXEEXT): $(eu_search_die_OBJECTS) $(eu_search_die_DEPENDENCIES) $(EXTRA_eu_search_die_DEPENDENCIES)
+ 	@rm -f eu_search_die$(EXEEXT)
+ 	$(AM_V_CCLD)$(eu_search_die_LINK) $(eu_search_die_OBJECTS) $(eu_search_die_LDADD) $(LIBS)
+ 
+-eu_search_lines$(EXEEXT): $(eu_search_lines_OBJECTS) $(eu_search_lines_DEPENDENCIES) $(EXTRA_eu_search_lines_DEPENDENCIES) 
++eu_search_lines$(EXEEXT): $(eu_search_lines_OBJECTS) $(eu_search_lines_DEPENDENCIES) $(EXTRA_eu_search_lines_DEPENDENCIES)
+ 	@rm -f eu_search_lines$(EXEEXT)
+ 	$(AM_V_CCLD)$(eu_search_lines_LINK) $(eu_search_lines_OBJECTS) $(eu_search_lines_LDADD) $(LIBS)
+ 
+-eu_search_macros$(EXEEXT): $(eu_search_macros_OBJECTS) $(eu_search_macros_DEPENDENCIES) $(EXTRA_eu_search_macros_DEPENDENCIES) 
++eu_search_macros$(EXEEXT): $(eu_search_macros_OBJECTS) $(eu_search_macros_DEPENDENCIES) $(EXTRA_eu_search_macros_DEPENDENCIES)
+ 	@rm -f eu_search_macros$(EXEEXT)
+ 	$(AM_V_CCLD)$(eu_search_macros_LINK) $(eu_search_macros_OBJECTS) $(eu_search_macros_LDADD) $(LIBS)
+ 
+-fillfile$(EXEEXT): $(fillfile_OBJECTS) $(fillfile_DEPENDENCIES) $(EXTRA_fillfile_DEPENDENCIES) 
++fillfile$(EXEEXT): $(fillfile_OBJECTS) $(fillfile_DEPENDENCIES) $(EXTRA_fillfile_DEPENDENCIES)
+ 	@rm -f fillfile$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(fillfile_OBJECTS) $(fillfile_LDADD) $(LIBS)
+ 
+-find-prologues$(EXEEXT): $(find_prologues_OBJECTS) $(find_prologues_DEPENDENCIES) $(EXTRA_find_prologues_DEPENDENCIES) 
++find-prologues$(EXEEXT): $(find_prologues_OBJECTS) $(find_prologues_DEPENDENCIES) $(EXTRA_find_prologues_DEPENDENCIES)
+ 	@rm -f find-prologues$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(find_prologues_OBJECTS) $(find_prologues_LDADD) $(LIBS)
+ 
+-funcretval$(EXEEXT): $(funcretval_OBJECTS) $(funcretval_DEPENDENCIES) $(EXTRA_funcretval_DEPENDENCIES) 
++funcretval$(EXEEXT): $(funcretval_OBJECTS) $(funcretval_DEPENDENCIES) $(EXTRA_funcretval_DEPENDENCIES)
+ 	@rm -f funcretval$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(funcretval_OBJECTS) $(funcretval_LDADD) $(LIBS)
+ 
+-funcretval_test++11$(EXEEXT): $(funcretval_test__11_OBJECTS) $(funcretval_test__11_DEPENDENCIES) $(EXTRA_funcretval_test__11_DEPENDENCIES) 
++funcretval_test++11$(EXEEXT): $(funcretval_test__11_OBJECTS) $(funcretval_test__11_DEPENDENCIES) $(EXTRA_funcretval_test__11_DEPENDENCIES)
+ 	@rm -f funcretval_test++11$(EXEEXT)
+ 	$(AM_V_CXXLD)$(CXXLINK) $(funcretval_test__11_OBJECTS) $(funcretval_test__11_LDADD) $(LIBS)
+ 
+-funcretval_test_struct$(EXEEXT): $(funcretval_test_struct_OBJECTS) $(funcretval_test_struct_DEPENDENCIES) $(EXTRA_funcretval_test_struct_DEPENDENCIES) 
++funcretval_test_struct$(EXEEXT): $(funcretval_test_struct_OBJECTS) $(funcretval_test_struct_DEPENDENCIES) $(EXTRA_funcretval_test_struct_DEPENDENCIES)
+ 	@rm -f funcretval_test_struct$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(funcretval_test_struct_OBJECTS) $(funcretval_test_struct_LDADD) $(LIBS)
+ 
+-funcscopes$(EXEEXT): $(funcscopes_OBJECTS) $(funcscopes_DEPENDENCIES) $(EXTRA_funcscopes_DEPENDENCIES) 
++funcscopes$(EXEEXT): $(funcscopes_OBJECTS) $(funcscopes_DEPENDENCIES) $(EXTRA_funcscopes_DEPENDENCIES)
+ 	@rm -f funcscopes$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(funcscopes_OBJECTS) $(funcscopes_LDADD) $(LIBS)
+ 
+-get-aranges$(EXEEXT): $(get_aranges_OBJECTS) $(get_aranges_DEPENDENCIES) $(EXTRA_get_aranges_DEPENDENCIES) 
++get-aranges$(EXEEXT): $(get_aranges_OBJECTS) $(get_aranges_DEPENDENCIES) $(EXTRA_get_aranges_DEPENDENCIES)
+ 	@rm -f get-aranges$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(get_aranges_OBJECTS) $(get_aranges_LDADD) $(LIBS)
+ 
+-get-files$(EXEEXT): $(get_files_OBJECTS) $(get_files_DEPENDENCIES) $(EXTRA_get_files_DEPENDENCIES) 
++get-files$(EXEEXT): $(get_files_OBJECTS) $(get_files_DEPENDENCIES) $(EXTRA_get_files_DEPENDENCIES)
+ 	@rm -f get-files$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(get_files_OBJECTS) $(get_files_LDADD) $(LIBS)
+ 
+-get-files-define-file$(EXEEXT): $(get_files_define_file_OBJECTS) $(get_files_define_file_DEPENDENCIES) $(EXTRA_get_files_define_file_DEPENDENCIES) 
++get-files-define-file$(EXEEXT): $(get_files_define_file_OBJECTS) $(get_files_define_file_DEPENDENCIES) $(EXTRA_get_files_define_file_DEPENDENCIES)
+ 	@rm -f get-files-define-file$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(get_files_define_file_OBJECTS) $(get_files_define_file_LDADD) $(LIBS)
+ 
+-get-lines$(EXEEXT): $(get_lines_OBJECTS) $(get_lines_DEPENDENCIES) $(EXTRA_get_lines_DEPENDENCIES) 
++get-lines$(EXEEXT): $(get_lines_OBJECTS) $(get_lines_DEPENDENCIES) $(EXTRA_get_lines_DEPENDENCIES)
+ 	@rm -f get-lines$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(get_lines_OBJECTS) $(get_lines_LDADD) $(LIBS)
+ 
+-get-pubnames$(EXEEXT): $(get_pubnames_OBJECTS) $(get_pubnames_DEPENDENCIES) $(EXTRA_get_pubnames_DEPENDENCIES) 
++get-pubnames$(EXEEXT): $(get_pubnames_OBJECTS) $(get_pubnames_DEPENDENCIES) $(EXTRA_get_pubnames_DEPENDENCIES)
+ 	@rm -f get-pubnames$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(get_pubnames_OBJECTS) $(get_pubnames_LDADD) $(LIBS)
+ 
+-get-units-invalid$(EXEEXT): $(get_units_invalid_OBJECTS) $(get_units_invalid_DEPENDENCIES) $(EXTRA_get_units_invalid_DEPENDENCIES) 
++get-units-invalid$(EXEEXT): $(get_units_invalid_OBJECTS) $(get_units_invalid_DEPENDENCIES) $(EXTRA_get_units_invalid_DEPENDENCIES)
+ 	@rm -f get-units-invalid$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(get_units_invalid_OBJECTS) $(get_units_invalid_LDADD) $(LIBS)
+ 
+-get-units-split$(EXEEXT): $(get_units_split_OBJECTS) $(get_units_split_DEPENDENCIES) $(EXTRA_get_units_split_DEPENDENCIES) 
++get-units-split$(EXEEXT): $(get_units_split_OBJECTS) $(get_units_split_DEPENDENCIES) $(EXTRA_get_units_split_DEPENDENCIES)
+ 	@rm -f get-units-split$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(get_units_split_OBJECTS) $(get_units_split_LDADD) $(LIBS)
+ 
+-getphdrnum$(EXEEXT): $(getphdrnum_OBJECTS) $(getphdrnum_DEPENDENCIES) $(EXTRA_getphdrnum_DEPENDENCIES) 
++getphdrnum$(EXEEXT): $(getphdrnum_OBJECTS) $(getphdrnum_DEPENDENCIES) $(EXTRA_getphdrnum_DEPENDENCIES)
+ 	@rm -f getphdrnum$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(getphdrnum_OBJECTS) $(getphdrnum_LDADD) $(LIBS)
+ 
+-getsrc_die$(EXEEXT): $(getsrc_die_OBJECTS) $(getsrc_die_DEPENDENCIES) $(EXTRA_getsrc_die_DEPENDENCIES) 
++getsrc_die$(EXEEXT): $(getsrc_die_OBJECTS) $(getsrc_die_DEPENDENCIES) $(EXTRA_getsrc_die_DEPENDENCIES)
+ 	@rm -f getsrc_die$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(getsrc_die_OBJECTS) $(getsrc_die_LDADD) $(LIBS)
+ 
+-hash$(EXEEXT): $(hash_OBJECTS) $(hash_DEPENDENCIES) $(EXTRA_hash_DEPENDENCIES) 
++hash$(EXEEXT): $(hash_OBJECTS) $(hash_DEPENDENCIES) $(EXTRA_hash_DEPENDENCIES)
+ 	@rm -f hash$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(hash_OBJECTS) $(hash_LDADD) $(LIBS)
+ 
+-leb128$(EXEEXT): $(leb128_OBJECTS) $(leb128_DEPENDENCIES) $(EXTRA_leb128_DEPENDENCIES) 
++leb128$(EXEEXT): $(leb128_OBJECTS) $(leb128_DEPENDENCIES) $(EXTRA_leb128_DEPENDENCIES)
+ 	@rm -f leb128$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(leb128_OBJECTS) $(leb128_LDADD) $(LIBS)
+ 
+-line2addr$(EXEEXT): $(line2addr_OBJECTS) $(line2addr_DEPENDENCIES) $(EXTRA_line2addr_DEPENDENCIES) 
++line2addr$(EXEEXT): $(line2addr_OBJECTS) $(line2addr_DEPENDENCIES) $(EXTRA_line2addr_DEPENDENCIES)
+ 	@rm -f line2addr$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(line2addr_OBJECTS) $(line2addr_LDADD) $(LIBS)
+ 
+-low_high_pc$(EXEEXT): $(low_high_pc_OBJECTS) $(low_high_pc_DEPENDENCIES) $(EXTRA_low_high_pc_DEPENDENCIES) 
++low_high_pc$(EXEEXT): $(low_high_pc_OBJECTS) $(low_high_pc_DEPENDENCIES) $(EXTRA_low_high_pc_DEPENDENCIES)
+ 	@rm -f low_high_pc$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(low_high_pc_OBJECTS) $(low_high_pc_LDADD) $(LIBS)
+ 
+-msg_tst$(EXEEXT): $(msg_tst_OBJECTS) $(msg_tst_DEPENDENCIES) $(EXTRA_msg_tst_DEPENDENCIES) 
++msg_tst$(EXEEXT): $(msg_tst_OBJECTS) $(msg_tst_DEPENDENCIES) $(EXTRA_msg_tst_DEPENDENCIES)
+ 	@rm -f msg_tst$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(msg_tst_OBJECTS) $(msg_tst_LDADD) $(LIBS)
+ 
+-newdata$(EXEEXT): $(newdata_OBJECTS) $(newdata_DEPENDENCIES) $(EXTRA_newdata_DEPENDENCIES) 
++newdata$(EXEEXT): $(newdata_OBJECTS) $(newdata_DEPENDENCIES) $(EXTRA_newdata_DEPENDENCIES)
+ 	@rm -f newdata$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(newdata_OBJECTS) $(newdata_LDADD) $(LIBS)
+ 
+-newfile$(EXEEXT): $(newfile_OBJECTS) $(newfile_DEPENDENCIES) $(EXTRA_newfile_DEPENDENCIES) 
++newfile$(EXEEXT): $(newfile_OBJECTS) $(newfile_DEPENDENCIES) $(EXTRA_newfile_DEPENDENCIES)
+ 	@rm -f newfile$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(newfile_OBJECTS) $(newfile_LDADD) $(LIBS)
+ 
+-newscn$(EXEEXT): $(newscn_OBJECTS) $(newscn_DEPENDENCIES) $(EXTRA_newscn_DEPENDENCIES) 
++newscn$(EXEEXT): $(newscn_OBJECTS) $(newscn_DEPENDENCIES) $(EXTRA_newscn_DEPENDENCIES)
+ 	@rm -f newscn$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(newscn_OBJECTS) $(newscn_LDADD) $(LIBS)
+ 
+-newzdata$(EXEEXT): $(newzdata_OBJECTS) $(newzdata_DEPENDENCIES) $(EXTRA_newzdata_DEPENDENCIES) 
++newzdata$(EXEEXT): $(newzdata_OBJECTS) $(newzdata_DEPENDENCIES) $(EXTRA_newzdata_DEPENDENCIES)
+ 	@rm -f newzdata$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(newzdata_OBJECTS) $(newzdata_LDADD) $(LIBS)
+ 
+-next-files$(EXEEXT): $(next_files_OBJECTS) $(next_files_DEPENDENCIES) $(EXTRA_next_files_DEPENDENCIES) 
++next-files$(EXEEXT): $(next_files_OBJECTS) $(next_files_DEPENDENCIES) $(EXTRA_next_files_DEPENDENCIES)
+ 	@rm -f next-files$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(next_files_OBJECTS) $(next_files_LDADD) $(LIBS)
+ 
+-next-lines$(EXEEXT): $(next_lines_OBJECTS) $(next_lines_DEPENDENCIES) $(EXTRA_next_lines_DEPENDENCIES) 
++next-lines$(EXEEXT): $(next_lines_OBJECTS) $(next_lines_DEPENDENCIES) $(EXTRA_next_lines_DEPENDENCIES)
+ 	@rm -f next-lines$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(next_lines_OBJECTS) $(next_lines_LDADD) $(LIBS)
+ 
+-next_cfi$(EXEEXT): $(next_cfi_OBJECTS) $(next_cfi_DEPENDENCIES) $(EXTRA_next_cfi_DEPENDENCIES) 
++next_cfi$(EXEEXT): $(next_cfi_OBJECTS) $(next_cfi_DEPENDENCIES) $(EXTRA_next_cfi_DEPENDENCIES)
+ 	@rm -f next_cfi$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(next_cfi_OBJECTS) $(next_cfi_LDADD) $(LIBS)
+ 
+-nvidia_extended_linemap_libdw$(EXEEXT): $(nvidia_extended_linemap_libdw_OBJECTS) $(nvidia_extended_linemap_libdw_DEPENDENCIES) $(EXTRA_nvidia_extended_linemap_libdw_DEPENDENCIES) 
++nvidia_extended_linemap_libdw$(EXEEXT): $(nvidia_extended_linemap_libdw_OBJECTS) $(nvidia_extended_linemap_libdw_DEPENDENCIES) $(EXTRA_nvidia_extended_linemap_libdw_DEPENDENCIES)
+ 	@rm -f nvidia_extended_linemap_libdw$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(nvidia_extended_linemap_libdw_OBJECTS) $(nvidia_extended_linemap_libdw_LDADD) $(LIBS)
+ 
+-peel_type$(EXEEXT): $(peel_type_OBJECTS) $(peel_type_DEPENDENCIES) $(EXTRA_peel_type_DEPENDENCIES) 
++peel_type$(EXEEXT): $(peel_type_OBJECTS) $(peel_type_DEPENDENCIES) $(EXTRA_peel_type_DEPENDENCIES)
+ 	@rm -f peel_type$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(peel_type_OBJECTS) $(peel_type_LDADD) $(LIBS)
+ 
+-rdwrmmap$(EXEEXT): $(rdwrmmap_OBJECTS) $(rdwrmmap_DEPENDENCIES) $(EXTRA_rdwrmmap_DEPENDENCIES) 
++rdwrmmap$(EXEEXT): $(rdwrmmap_OBJECTS) $(rdwrmmap_DEPENDENCIES) $(EXTRA_rdwrmmap_DEPENDENCIES)
+ 	@rm -f rdwrmmap$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(rdwrmmap_OBJECTS) $(rdwrmmap_LDADD) $(LIBS)
+ 
+-read_unaligned$(EXEEXT): $(read_unaligned_OBJECTS) $(read_unaligned_DEPENDENCIES) $(EXTRA_read_unaligned_DEPENDENCIES) 
++read_unaligned$(EXEEXT): $(read_unaligned_OBJECTS) $(read_unaligned_DEPENDENCIES) $(EXTRA_read_unaligned_DEPENDENCIES)
+ 	@rm -f read_unaligned$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(read_unaligned_OBJECTS) $(read_unaligned_LDADD) $(LIBS)
+ 
+-rerequest_tag$(EXEEXT): $(rerequest_tag_OBJECTS) $(rerequest_tag_DEPENDENCIES) $(EXTRA_rerequest_tag_DEPENDENCIES) 
++rerequest_tag$(EXEEXT): $(rerequest_tag_OBJECTS) $(rerequest_tag_DEPENDENCIES) $(EXTRA_rerequest_tag_DEPENDENCIES)
+ 	@rm -f rerequest_tag$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(rerequest_tag_OBJECTS) $(rerequest_tag_LDADD) $(LIBS)
+ 
+-saridx$(EXEEXT): $(saridx_OBJECTS) $(saridx_DEPENDENCIES) $(EXTRA_saridx_DEPENDENCIES) 
++saridx$(EXEEXT): $(saridx_OBJECTS) $(saridx_DEPENDENCIES) $(EXTRA_saridx_DEPENDENCIES)
+ 	@rm -f saridx$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(saridx_OBJECTS) $(saridx_LDADD) $(LIBS)
+ 
+-scnnames$(EXEEXT): $(scnnames_OBJECTS) $(scnnames_DEPENDENCIES) $(EXTRA_scnnames_DEPENDENCIES) 
++scnnames$(EXEEXT): $(scnnames_OBJECTS) $(scnnames_DEPENDENCIES) $(EXTRA_scnnames_DEPENDENCIES)
+ 	@rm -f scnnames$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(scnnames_OBJECTS) $(scnnames_LDADD) $(LIBS)
+ 
+-sectiondump$(EXEEXT): $(sectiondump_OBJECTS) $(sectiondump_DEPENDENCIES) $(EXTRA_sectiondump_DEPENDENCIES) 
++sectiondump$(EXEEXT): $(sectiondump_OBJECTS) $(sectiondump_DEPENDENCIES) $(EXTRA_sectiondump_DEPENDENCIES)
+ 	@rm -f sectiondump$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(sectiondump_OBJECTS) $(sectiondump_LDADD) $(LIBS)
+ 
+-show-abbrev$(EXEEXT): $(show_abbrev_OBJECTS) $(show_abbrev_DEPENDENCIES) $(EXTRA_show_abbrev_DEPENDENCIES) 
++show-abbrev$(EXEEXT): $(show_abbrev_OBJECTS) $(show_abbrev_DEPENDENCIES) $(EXTRA_show_abbrev_DEPENDENCIES)
+ 	@rm -f show-abbrev$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(show_abbrev_OBJECTS) $(show_abbrev_LDADD) $(LIBS)
+ 
+-show-die-info$(EXEEXT): $(show_die_info_OBJECTS) $(show_die_info_DEPENDENCIES) $(EXTRA_show_die_info_DEPENDENCIES) 
++show-die-info$(EXEEXT): $(show_die_info_OBJECTS) $(show_die_info_DEPENDENCIES) $(EXTRA_show_die_info_DEPENDENCIES)
+ 	@rm -f show-die-info$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(show_die_info_OBJECTS) $(show_die_info_LDADD) $(LIBS)
+ 
+-showptable$(EXEEXT): $(showptable_OBJECTS) $(showptable_DEPENDENCIES) $(EXTRA_showptable_DEPENDENCIES) 
++showptable$(EXEEXT): $(showptable_OBJECTS) $(showptable_DEPENDENCIES) $(EXTRA_showptable_DEPENDENCIES)
+ 	@rm -f showptable$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(showptable_OBJECTS) $(showptable_LDADD) $(LIBS)
+ 
+-strptr$(EXEEXT): $(strptr_OBJECTS) $(strptr_DEPENDENCIES) $(EXTRA_strptr_DEPENDENCIES) 
++strptr$(EXEEXT): $(strptr_OBJECTS) $(strptr_DEPENDENCIES) $(EXTRA_strptr_DEPENDENCIES)
+ 	@rm -f strptr$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(strptr_OBJECTS) $(strptr_LDADD) $(LIBS)
+ 
+-system-elf-gelf-test$(EXEEXT): $(system_elf_gelf_test_OBJECTS) $(system_elf_gelf_test_DEPENDENCIES) $(EXTRA_system_elf_gelf_test_DEPENDENCIES) 
++system-elf-gelf-test$(EXEEXT): $(system_elf_gelf_test_OBJECTS) $(system_elf_gelf_test_DEPENDENCIES) $(EXTRA_system_elf_gelf_test_DEPENDENCIES)
+ 	@rm -f system-elf-gelf-test$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(system_elf_gelf_test_OBJECTS) $(system_elf_gelf_test_LDADD) $(LIBS)
+ 
+-system-elf-libelf-test$(EXEEXT): $(system_elf_libelf_test_OBJECTS) $(system_elf_libelf_test_DEPENDENCIES) $(EXTRA_system_elf_libelf_test_DEPENDENCIES) 
++system-elf-libelf-test$(EXEEXT): $(system_elf_libelf_test_OBJECTS) $(system_elf_libelf_test_DEPENDENCIES) $(EXTRA_system_elf_libelf_test_DEPENDENCIES)
+ 	@rm -f system-elf-libelf-test$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(system_elf_libelf_test_OBJECTS) $(system_elf_libelf_test_LDADD) $(LIBS)
+ 
+-test-elf_cntl_gelf_getshdr$(EXEEXT): $(test_elf_cntl_gelf_getshdr_OBJECTS) $(test_elf_cntl_gelf_getshdr_DEPENDENCIES) $(EXTRA_test_elf_cntl_gelf_getshdr_DEPENDENCIES) 
++test-elf_cntl_gelf_getshdr$(EXEEXT): $(test_elf_cntl_gelf_getshdr_OBJECTS) $(test_elf_cntl_gelf_getshdr_DEPENDENCIES) $(EXTRA_test_elf_cntl_gelf_getshdr_DEPENDENCIES)
+ 	@rm -f test-elf_cntl_gelf_getshdr$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(test_elf_cntl_gelf_getshdr_OBJECTS) $(test_elf_cntl_gelf_getshdr_LDADD) $(LIBS)
+ 
+-test-flag-nobits$(EXEEXT): $(test_flag_nobits_OBJECTS) $(test_flag_nobits_DEPENDENCIES) $(EXTRA_test_flag_nobits_DEPENDENCIES) 
++test-flag-nobits$(EXEEXT): $(test_flag_nobits_OBJECTS) $(test_flag_nobits_DEPENDENCIES) $(EXTRA_test_flag_nobits_DEPENDENCIES)
+ 	@rm -f test-flag-nobits$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(test_flag_nobits_OBJECTS) $(test_flag_nobits_LDADD) $(LIBS)
+ 
+-test-manyfuncs$(EXEEXT): $(test_manyfuncs_OBJECTS) $(test_manyfuncs_DEPENDENCIES) $(EXTRA_test_manyfuncs_DEPENDENCIES) 
++test-manyfuncs$(EXEEXT): $(test_manyfuncs_OBJECTS) $(test_manyfuncs_DEPENDENCIES) $(EXTRA_test_manyfuncs_DEPENDENCIES)
+ 	@rm -f test-manyfuncs$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(test_manyfuncs_OBJECTS) $(test_manyfuncs_LDADD) $(LIBS)
+ 
+-typeiter$(EXEEXT): $(typeiter_OBJECTS) $(typeiter_DEPENDENCIES) $(EXTRA_typeiter_DEPENDENCIES) 
++typeiter$(EXEEXT): $(typeiter_OBJECTS) $(typeiter_DEPENDENCIES) $(EXTRA_typeiter_DEPENDENCIES)
+ 	@rm -f typeiter$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(typeiter_OBJECTS) $(typeiter_LDADD) $(LIBS)
+ 
+-typeiter2$(EXEEXT): $(typeiter2_OBJECTS) $(typeiter2_DEPENDENCIES) $(EXTRA_typeiter2_DEPENDENCIES) 
++typeiter2$(EXEEXT): $(typeiter2_OBJECTS) $(typeiter2_DEPENDENCIES) $(EXTRA_typeiter2_DEPENDENCIES)
+ 	@rm -f typeiter2$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(typeiter2_OBJECTS) $(typeiter2_LDADD) $(LIBS)
+ 
+-unit-info$(EXEEXT): $(unit_info_OBJECTS) $(unit_info_DEPENDENCIES) $(EXTRA_unit_info_DEPENDENCIES) 
++unit-info$(EXEEXT): $(unit_info_OBJECTS) $(unit_info_DEPENDENCIES) $(EXTRA_unit_info_DEPENDENCIES)
+ 	@rm -f unit-info$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(unit_info_OBJECTS) $(unit_info_LDADD) $(LIBS)
+ 
+-update1$(EXEEXT): $(update1_OBJECTS) $(update1_DEPENDENCIES) $(EXTRA_update1_DEPENDENCIES) 
++update1$(EXEEXT): $(update1_OBJECTS) $(update1_DEPENDENCIES) $(EXTRA_update1_DEPENDENCIES)
+ 	@rm -f update1$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(update1_OBJECTS) $(update1_LDADD) $(LIBS)
+ 
+-update2$(EXEEXT): $(update2_OBJECTS) $(update2_DEPENDENCIES) $(EXTRA_update2_DEPENDENCIES) 
++update2$(EXEEXT): $(update2_OBJECTS) $(update2_DEPENDENCIES) $(EXTRA_update2_DEPENDENCIES)
+ 	@rm -f update2$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(update2_OBJECTS) $(update2_LDADD) $(LIBS)
+ 
+-update3$(EXEEXT): $(update3_OBJECTS) $(update3_DEPENDENCIES) $(EXTRA_update3_DEPENDENCIES) 
++update3$(EXEEXT): $(update3_OBJECTS) $(update3_DEPENDENCIES) $(EXTRA_update3_DEPENDENCIES)
+ 	@rm -f update3$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(update3_OBJECTS) $(update3_LDADD) $(LIBS)
+ 
+-update4$(EXEEXT): $(update4_OBJECTS) $(update4_DEPENDENCIES) $(EXTRA_update4_DEPENDENCIES) 
++update4$(EXEEXT): $(update4_OBJECTS) $(update4_DEPENDENCIES) $(EXTRA_update4_DEPENDENCIES)
+ 	@rm -f update4$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(update4_OBJECTS) $(update4_LDADD) $(LIBS)
+ 
+-varlocs$(EXEEXT): $(varlocs_OBJECTS) $(varlocs_DEPENDENCIES) $(EXTRA_varlocs_DEPENDENCIES) 
++varlocs$(EXEEXT): $(varlocs_OBJECTS) $(varlocs_DEPENDENCIES) $(EXTRA_varlocs_DEPENDENCIES)
+ 	@rm -f varlocs$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(varlocs_OBJECTS) $(varlocs_LDADD) $(LIBS)
+ 
+-vdsosyms$(EXEEXT): $(vdsosyms_OBJECTS) $(vdsosyms_DEPENDENCIES) $(EXTRA_vdsosyms_DEPENDENCIES) 
++vdsosyms$(EXEEXT): $(vdsosyms_OBJECTS) $(vdsosyms_DEPENDENCIES) $(EXTRA_vdsosyms_DEPENDENCIES)
+ 	@rm -f vdsosyms$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(vdsosyms_OBJECTS) $(vdsosyms_LDADD) $(LIBS)
+ 
+-vendorelf$(EXEEXT): $(vendorelf_OBJECTS) $(vendorelf_DEPENDENCIES) $(EXTRA_vendorelf_DEPENDENCIES) 
++vendorelf$(EXEEXT): $(vendorelf_OBJECTS) $(vendorelf_DEPENDENCIES) $(EXTRA_vendorelf_DEPENDENCIES)
+ 	@rm -f vendorelf$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(vendorelf_OBJECTS) $(vendorelf_LDADD) $(LIBS)
+ 
+-xlate_notes$(EXEEXT): $(xlate_notes_OBJECTS) $(xlate_notes_DEPENDENCIES) $(EXTRA_xlate_notes_DEPENDENCIES) 
++xlate_notes$(EXEEXT): $(xlate_notes_OBJECTS) $(xlate_notes_DEPENDENCIES) $(EXTRA_xlate_notes_DEPENDENCIES)
+ 	@rm -f xlate_notes$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(xlate_notes_OBJECTS) $(xlate_notes_LDADD) $(LIBS)
+ 
+-zstrptr$(EXEEXT): $(zstrptr_OBJECTS) $(zstrptr_DEPENDENCIES) $(EXTRA_zstrptr_DEPENDENCIES) 
++zstrptr$(EXEEXT): $(zstrptr_OBJECTS) $(zstrptr_DEPENDENCIES) $(EXTRA_zstrptr_DEPENDENCIES)
+ 	@rm -f zstrptr$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(zstrptr_OBJECTS) $(zstrptr_LDADD) $(LIBS)
+ 
