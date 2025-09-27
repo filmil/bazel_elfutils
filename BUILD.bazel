@@ -32,7 +32,7 @@ configure_make(
         "--disable-rpath",
     ],
     args = [
-        "install",
+        "V=1 install",
     ],
     out_binaries = _BINARIES,
     out_shared_libs = [
