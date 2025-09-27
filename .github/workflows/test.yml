@@ -25,7 +25,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Test proper
-        run: "bazel test //..."
+        run: "bazel test --test_output=errors //..."
       - name: Test integration
-        run: "cd integration && bazel test //..."
+        run: "cd integration && bazel test --test_output=errors //..."
 
