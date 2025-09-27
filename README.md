@@ -1,5 +1,5 @@
 # `bazel`-compiled hermetic library
 
 ```
-bazel build //...
+bazel test //...
 ```
