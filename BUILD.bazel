@@ -3,9 +3,8 @@ load("@rules_foreign_cc//foreign_cc:defs.bzl", "configure_make")
 
 package(default_visibility = ["//visibility:public"])
 
+# All binaries built by the `elfutils` library.
 _BINARIES = [
-    "eu-addr2line",
-    "eu-ar",
     "eu-addr2line",
     "eu-ar",
     "eu-elfclassify",
