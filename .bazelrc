@@ -9,4 +9,4 @@ build \
   --registry=https://bcr.bazel.build
 
 common \
- --experimental_ui_max_stdouterr_bytes=4000000
+ --experimental_ui_max_stdouterr_bytes=9000000
