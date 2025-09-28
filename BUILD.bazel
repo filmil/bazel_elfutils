@@ -30,11 +30,7 @@ configure_make(
     name = "elfutils",
     lib_source = "@src//:all_srcs",
     configure_options = [
-        "--prefix=$$INSTALLDIR$$",
         "--without-libintl-prefix",
-    ],
-    args = [
-        "V=1 install",
     ],
     env = {
     },
@@ -56,10 +52,7 @@ configure_make(
         "libelf.a",
     ],
     deps = [
-        "@zlib//:zlib",
-    ],
-    data = [
-        "@zlib//:zlib",
+        "@zlib//:lib",
     ],
 )
 
@@ -82,7 +75,7 @@ cc_test(
     ],
     deps = [
         ":elfutils",
-        "@zlib//:zlib",
+        "@zlib//:lib",
     ],
 )
 
@@ -93,6 +86,6 @@ cc_test(
         "test.cc",
     ],
     deps = [
-        "@zlib//:zlib",
+        "@zlib//:lib",
     ],
 )
