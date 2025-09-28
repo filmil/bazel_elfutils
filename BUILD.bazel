@@ -1,5 +1,5 @@
 load("@rules_cc//cc:defs.bzl", "cc_test")
-load("@rules_foreign_cc//foreign_cc:defs.bzl", "configure_make")
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "configure_make", "configure_make_variant")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -25,12 +25,20 @@ _BINARIES = [
     "eu-unstrip",
 ]
 
+
 configure_make(
     name = "elfutils",
     lib_source = "@src//:all_srcs",
+    configure_options = [
+        "--prefix=$$INSTALLDIR$$",
+        "--without-libintl-prefix",
+    ],
     args = [
         "V=1 install",
     ],
+    env = {
+        "LDFLAGS": "-l:libz.a",
+    },
     out_binaries = _BINARIES,
     out_shared_libs = [
         "libasm-0.193.so",
@@ -49,6 +57,9 @@ configure_make(
         "libelf.a",
     ],
     deps = [
+        "@zlib//:zlib",
+    ],
+    data = [
         "@zlib//:zlib",
     ],
 )
