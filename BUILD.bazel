@@ -37,7 +37,6 @@ configure_make(
         "V=1 install",
     ],
     env = {
-        "LDFLAGS": "-l:libz.a",
     },
     out_binaries = _BINARIES,
     out_shared_libs = [
