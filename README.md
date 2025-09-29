@@ -9,7 +9,9 @@ This project builds the `elfutils` library and its associated binaries (like `eu
 
 # Bill-of-Material notices
 
-You may notice that I have a few similar projects. This is my effort to provide hermetic libraries for the upcoming Bazel modules world.
+You may notice that I have a few similar projects. This is my effort to provide hermetic libraries for the upcoming Bazel modules world. Refer to [standardization notes][stdn] for details.
+
+[stdn]: https://hdlfactory.com/post/2025/09/29/getting-ready-for-the-brave-new-bazel-modules-world/
 
 Other modules for the same library may be available. It is not my intention to check for duplicated effort.
 
