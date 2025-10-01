@@ -22,6 +22,8 @@ jobs:
           repository-cache: true
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Build
+        run: "bazel build --test_output=errors @elfutils//:elfutils"
       - name: Test proper
         run: "bazel test --test_output=errors //..."
       - name: Test integration
