@@ -30,9 +30,19 @@ configure_make(
     name = "elfutils",
     lib_source = "@src//:all_srcs",
     configure_options = [
+        # I think we don't need this.
         "--without-libintl-prefix",
     ],
+    args = [
+        # Causes the build process to print the command lines, excellent
+        # for debugging.
+        "V=1",
+    ],
     env = {
+        # -lz: the configure step does not detect libz.so from `deps`
+        # -lstdc++: there seemms to be ONE program which needs libstdc++,
+        # and adding -lz seems to confuse the build process.
+        "LDFLAGS": "-lz -lstdc++",
     },
     out_binaries = _BINARIES,
     out_shared_libs = [
@@ -52,7 +62,10 @@ configure_make(
         "libelf.a",
     ],
     deps = [
-        "@zlib//:lib",
+        # This brings the bazel module for zlib into the build, but does not
+        # help `configure` discover zlib. This is why we need to specify
+        # `-lz` in `LDFLAGS` above.
+        "@zlib//:zlib",
     ],
 )
 
@@ -68,24 +81,29 @@ configure_make(
 ]
 
 
+# Try to link with elfutils to allow `bazel test //...` to verify it was
+# built.
 cc_test(
     name = "test",
+    size = "small",
     srcs = [
         "test.cc",
     ],
     deps = [
         ":elfutils",
-        "@zlib//:lib",
+        "@zlib//:zlib",
     ],
 )
 
 # Link only with zlib to illustrate how linking works.
 cc_test(
     name = "test_link_zlib",
+    size = "small",
     srcs = [
         "test.cc",
     ],
     deps = [
-        "@zlib//:lib",
+        "@zlib//:zlib",
     ],
 )
+
