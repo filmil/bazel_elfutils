@@ -50,4 +50,17 @@ jobs:
           tag: ${{ steps.tag_version.outputs.new_tag }}
           allowUpdates: true
           artifacts: "${{ env.REPO_NAME }}-${{ env.VERSION }}.zip"
+      - name: Publish to my Bazel Registry
+        uses: "bazel-contrib/publish-to-bcr/.github/workflows/publish.yaml@v0.2.2"
+        with:
+          tag_name: ${{ steps.tag_version.outputs.new_tag }}
+          registry: filmil/bazel-registry
+          registry_fork: filmil/bazel-registry
+          attest: false
+        permissions:
+          contents: write
+          id-token: write
+          attestations: write
+        secrets:
+          publish_token: ${{ secrets.BCR_PUBLISH_TOKEN }}
 
