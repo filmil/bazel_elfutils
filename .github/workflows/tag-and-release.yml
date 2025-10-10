@@ -58,6 +58,4 @@ jobs:
     uses: ./.github/workflows/publish.yml
     with:
       tag_name: ${{ needs.tag.outputs.tag_name }}
-    secrets:
-      BCR_PUBLISH_TOKEN: ${{ secrets.BCR_PUBLISH_TOKEN }}
 
