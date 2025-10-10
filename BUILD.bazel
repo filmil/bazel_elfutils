@@ -43,6 +43,8 @@ configure_make(
         # -lstdc++: there seemms to be ONE program which needs libstdc++,
         # and adding -lz seems to confuse the build process.
         "LDFLAGS": "-lz -lstdc++",
+        "CFLAGS": "-Wno-error",
+        "CXXFLAGS": "-Wno-error",
     },
     out_binaries = _BINARIES,
     out_shared_libs = [
