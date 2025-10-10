@@ -45,6 +45,7 @@ configure_make(
         "LDFLAGS": "-lz -lstdc++",
         "CFLAGS": "-Wno-error",
         "CXXFLAGS": "-Wno-error",
+        "PKG_CONFIG_PATH": "$$(echo $${PKG_CONFIG_PATH:-})",
     },
     out_binaries = _BINARIES,
     out_shared_libs = [
