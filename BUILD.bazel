@@ -44,10 +44,10 @@ configure_make(
         # -lz: the configure step does not detect libz.so from `deps`
         # -lstdc++: there seemms to be ONE program which needs libstdc++,
         # and adding -lz seems to confuse the build process.
-        "LDFLAGS": "-lz -lstdc++",
-        "CFLAGS": "-Wno-error",
-        "CXXFLAGS": "-Wno-error",
-        "PKG_CONFIG_PATH": "$$(echo $${PKG_CONFIG_PATH:-})",
+        "LDFLAGS": "-lz -lstdc++ $$(echo $${elfutils_bazel_LDFLAGS:-})",
+        "CFLAGS": "-Wno-error $$(echo $${elfutils_bazel_CFLAGS:-})",
+        "CXXFLAGS": "-Wno-error $$(echo $${elfutils_bazel_CFLAGS:-})",
+        "PKG_CONFIG_PATH": "$$(echo $${elfutils_bazel_PKG_CONFIG_PATH:-})",
     },
     out_binaries = _BINARIES,
     out_shared_libs = [
