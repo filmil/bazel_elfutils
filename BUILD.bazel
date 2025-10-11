@@ -48,6 +48,8 @@ configure_make(
         "CFLAGS": "-Wno-error $$(echo $${elfutils_bazel_CFLAGS:-})",
         "CXXFLAGS": "-Wno-error $$(echo $${elfutils_bazel_CFLAGS:-})",
         "PKG_CONFIG_PATH": "$$(echo $${elfutils_bazel_PKG_CONFIG_PATH:-})",
+        "elfutils_bazel_CFLAGS": "$${elfutils_bazel_CFLAGS:--I.}",
+        "elfutils_bazel_LDFLAGS": "$${elfutils_bazel_LDFLAGS:--L.}",
     },
     out_binaries = _BINARIES,
     out_shared_libs = [
