@@ -34,6 +34,7 @@ configure_make(
         "--without-libintl-prefix",
         # Hopefully this doesn't blow up in our face.
         "--without-bzlib",
+        "--without-lzma",
     ],
     args = [
         # Causes the build process to print the command lines, excellent
