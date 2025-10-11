@@ -5,6 +5,10 @@ on:
   release:
     types: [published]
   workflow_call:
+    secrets:
+      BCR_PUBLISH_TOKEN:
+        required: false
+        description: 'Optional token for BCR publishing.'
     inputs:
       tag_name:
         required: true
