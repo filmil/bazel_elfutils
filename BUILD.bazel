@@ -51,6 +51,7 @@ configure_make(
         "PKG_CONFIG_PATH": "$$(echo $${elfutils_bazel_PKG_CONFIG_PATH:-})",
         "elfutils_bazel_CFLAGS": "$${elfutils_bazel_CFLAGS:-}",
         "elfutils_bazel_LDFLAGS": "$${elfutils_bazel_LDFLAGS:-}",
+        "M4": "$(location @m4//:m4_exe)",
     },
     out_binaries = _BINARIES,
     out_shared_libs = [
@@ -74,6 +75,9 @@ configure_make(
         # help `configure` discover zlib. This is why we need to specify
         # `-lz` in `LDFLAGS` above.
         "@zlib//:zlib",
+    ],
+    data = [
+        "@m4//:m4_exe",
     ],
 )
 
