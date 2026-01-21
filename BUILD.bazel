@@ -1,5 +1,5 @@
 load("@rules_cc//cc:defs.bzl", "cc_test")
-load("@rules_foreign_cc//foreign_cc:defs.bzl", "configure_make", "configure_make_variant")
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "configure_make")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -51,7 +51,7 @@ configure_make(
         "PKG_CONFIG_PATH": "$$(echo $${elfutils_bazel_PKG_CONFIG_PATH:-})",
         "elfutils_bazel_CFLAGS": "$${elfutils_bazel_CFLAGS:-}",
         "elfutils_bazel_LDFLAGS": "$${elfutils_bazel_LDFLAGS:-}",
-        "M4": "$(location @m4//:m4_exe)",
+        "M4": "$(M4)",
     },
     out_binaries = _BINARIES,
     out_shared_libs = [
@@ -76,9 +76,7 @@ configure_make(
         # `-lz` in `LDFLAGS` above.
         "@zlib//:zlib",
     ],
-    data = [
-        "@m4//:m4_exe",
-    ],
+    toolchains = ["@rules_m4//m4:current_m4_toolchain"],
 )
 
 
