@@ -51,9 +51,8 @@ configure_make(
         "PKG_CONFIG_PATH": "$$(echo $${elfutils_bazel_PKG_CONFIG_PATH:-})",
         "elfutils_bazel_CFLAGS": "$${elfutils_bazel_CFLAGS:-}",
         "elfutils_bazel_LDFLAGS": "$${elfutils_bazel_LDFLAGS:-}",
-        # The elfutils code hardcodes the name of the m4 binary. This was patched
-        # by //:0001.patch.
-        "BAZEL_M4": "$$EXT_BUILD_ROOT/$(M4)",
+        "M4_FULLPATH": "$$EXT_BUILD_ROOT/$(M4)",
+        "PATH": "$${M4_FULLPATH%/*}:$$PATH",
     },
     out_binaries = _BINARIES,
     out_shared_libs = [
